@@ -1,0 +1,18 @@
+title: hosochin.com
+description: 技術ブログ
+url: https://hosochin.github.io
+baseurl: /tech-blog
+permalink: /:title/
+
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CLAUDE.md
+  - WORK_LOG.md

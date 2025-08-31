@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    
+    <!-- Basic CSS -->
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #333; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .header { border-bottom: 1px solid #eee; margin-bottom: 30px; padding-bottom: 20px; }
+        .post-meta { color: #666; font-size: 0.9em; margin-bottom: 20px; }
+        .post-list { list-style: none; padding: 0; }
+        .post-list li { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+        <p>{{ site.description }}</p>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; color: #666; text-align: center;">
+        <p>&copy; 2025 {{ site.title }}</p>
+    </footer>
+</body>
+</html>

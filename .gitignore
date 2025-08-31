@@ -1,0 +1,23 @@
+# 作業ログ・計画書（非公開）
+CLAUDE.md
+WORK_LOG.md
+REPLACE_PLAN.md
+*.private.md
+
+# Jekyll関連
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# macOS
+.DS_Store
+
+# エディタ
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ログ
+*.log
