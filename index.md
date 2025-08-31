@@ -20,4 +20,4 @@ layout: default
 
 ## このサイトについて
 
-hosochin.com の技術ブログです。GitHub Pages + Jekyll で構築しています。
+hosochin の技術ブログです。Web開発、プログラミング、ツール紹介などを書いています。
