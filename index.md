@@ -26,5 +26,5 @@ layout: default
 
 <div class="about-section">
   <h3>このサイトについて</h3>
-  <p>hosochin の技術ブログです。Web開発、プログラミング、ツール紹介などを書いています。</p>
+  <p>hosochin の技術ブログです。自分が躓いたところやハマったところについて分かりやすく書いていければと思います。</p>
 </div>

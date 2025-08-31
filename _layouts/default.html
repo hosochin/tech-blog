@@ -6,6 +6,12 @@
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
+    <!-- ファビコン -->
+    <link rel="icon" type="image/jpeg" href="{{ '/icon_.jpg' | relative_url }}">
+    <link rel="apple-touch-icon" href="{{ '/icon_.jpg' | relative_url }}">
+    <meta name="msapplication-TileImage" content="{{ '/icon_.jpg' | relative_url }}">
+    <meta name="msapplication-TileColor" content="#0066cc">
+
     <!-- Enhanced CSS -->
     <style>
         * {
@@ -15,11 +21,28 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans CJK JP", sans-serif;
             line-height: 1.7;
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
             background-color: #fafafa;
             color: #333;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .sidebar {
+                order: -1;
+            }
         }
 
         h1,
@@ -56,21 +79,70 @@
         .header {
             background: white;
             border-radius: 8px;
-            padding: 30px;
+            padding: 30px 30px 20px 30px;
             margin-bottom: 30px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             text-align: center;
         }
 
         .header h1 {
-            margin: 0;
+            margin: 0 0 10px 0;
             color: #0066cc;
         }
 
         .header p {
-            margin: 10px 0 0 0;
+            margin: 0 0 20px 0;
             color: #666;
             font-size: 1.1em;
+        }
+
+        /* ナビゲーションタブ */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            border-bottom: 2px solid #eee;
+        }
+
+        .nav-tabs li {
+            margin: 0;
+        }
+
+        .nav-tabs a {
+            display: block;
+            padding: 12px 24px;
+            color: #666;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .nav-tabs a:hover {
+            color: #0066cc;
+            text-decoration: none;
+            border-bottom-color: #0066cc;
+        }
+
+        .nav-tabs a.active {
+            color: #0066cc;
+            border-bottom-color: #0066cc;
+        }
+
+        @media (max-width: 768px) {
+            .nav-tabs {
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+            }
+
+            .nav-tabs a {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
         }
 
         main {
@@ -174,7 +246,7 @@
         .search-container {
             margin-bottom: 30px;
         }
-        
+
         #search-input {
             width: 100%;
             padding: 12px 16px;
@@ -183,25 +255,216 @@
             font-size: 16px;
             transition: border-color 0.2s ease;
         }
-        
+
         #search-input:focus {
             outline: none;
             border-color: #0066cc;
         }
-        
+
         #search-results {
             margin-top: 20px;
         }
-        
+
         #search-results .post-item {
             border-left: 3px solid #0066cc;
         }
-        
+
         .no-results {
             text-align: center;
             color: #666;
             font-style: italic;
             margin-top: 20px;
+        }
+
+        /* コードブロックのスタイル */
+        pre,
+        code {
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+        }
+
+        /* インラインコード */
+        code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        /* コードブロック */
+        pre {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+            border: 1px solid #2d3748;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            border-radius: 0;
+            color: inherit;
+        }
+
+        /* シンタックスハイライト（Rouge用） */
+        .highlight {
+            background: #1a202c;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .highlight pre {
+            margin: 0;
+            border: none;
+        }
+
+        /* シンタックスハイライトの色設定 */
+        .highlight .c {
+            color: #718096;
+        }
+
+        /* コメント */
+        .highlight .k {
+            color: #f56565;
+        }
+
+        /* キーワード */
+        .highlight .s {
+            color: #68d391;
+        }
+
+        /* 文字列 */
+        .highlight .mi {
+            color: #f6ad55;
+        }
+
+        /* 数値 */
+        .highlight .nf {
+            color: #4fd1c7;
+        }
+
+        /* 関数名 */
+        .highlight .nc {
+            color: #fbb6ce;
+        }
+
+        /* クラス名 */
+        .highlight .o {
+            color: #e2e8f0;
+        }
+
+        /* 演算子 */
+        .highlight .p {
+            color: #e2e8f0;
+        }
+
+        /* 括弧 */
+
+        /* サイドバー */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-self: start;
+            position: sticky;
+            top: 20px;
+        }
+
+        .sidebar-widget {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar-widget h3 {
+            margin: 0 0 15px 0;
+            color: #0066cc;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .profile-info {
+            text-align: center;
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            overflow: hidden;
+            border: 3px solid #0066cc;
+            box-shadow: 0 4px 8px rgba(0, 102, 204, 0.2);
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .profile-bio {
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .profile-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .profile-link {
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 0.85em;
+            padding: 6px 12px;
+            border: 1px solid #0066cc;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .profile-link:hover {
+            background: #0066cc;
+            color: white;
+            text-decoration: none;
+        }
+
+        .tags-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .tag-item {
+            background: #f0f8ff;
+            color: #0066cc;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .tag-item:hover {
+            background: #0066cc;
+            color: white;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -209,21 +472,81 @@
     <header class="header">
         <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
         <p>{{ site.description }}</p>
+
+        <nav>
+            <ul class="nav-tabs">
+                <li><a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">ホーム</a></li>
+                <li><a href="{{ '/tools/' | relative_url }}" class="{% if page.url contains '/tools' %}active{% endif %}">ツール</a></li>
+                <li><a href="{{ '/about/' | relative_url }}" class="{% if page.url contains '/about' %}active{% endif %}">About</a></li>
+                <li><a href="{{ '/archive/' | relative_url }}" class="{% if page.url contains '/archive' %}active{% endif %}">アーカイブ</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-        {{ content }}
-    </main>
+    <div class="container">
+        <main>
+            {{ content }}
+        </main>
 
-    <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; color: #666; text-align: center;">
+        <aside class="sidebar">
+            <!-- プロフィール -->
+            <div class="sidebar-widget">
+                <h3>プロフィール</h3>
+                <div class="profile-info">
+                    <div class="profile-avatar">
+                        <img src="{{ '/icon_.jpg' | relative_url }}" alt="hosochin">
+                    </div>
+                    <div class="profile-name">hosochin</div>
+                    <div class="profile-bio">
+                        IT技術を中心にゆるく発信しています。<br>
+                        アルコール駆動開発<br>
+                    </div>
+                    <div class="profile-links">
+                        <a href="https://github.com/hosochin" class="profile-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- タグ -->
+            <div class="sidebar-widget">
+                <h3>タグ</h3>
+                <div class="tags-list">
+                    {% for tag in site.tags %}
+                    <a href="/tag/{{ tag[0] | slugify }}/" class="tag-item">{{ tag[0] }} ({{ tag[1].size }})</a>
+                    {% endfor %}
+                    <!-- サンプルタグ（まだ記事が少ないので） -->
+                    <a href="#" class="tag-item">Jekyll (2)</a>
+                    <a href="#" class="tag-item">GitHub Pages (1)</a>
+                    <a href="#" class="tag-item">JavaScript (1)</a>
+                    <a href="#" class="tag-item">Web開発 (2)</a>
+                    <a href="#" class="tag-item">Tools (1)</a>
+                </div>
+            </div>
+
+            <!-- 最近の記事 -->
+            <div class="sidebar-widget">
+                <h3>最近の記事</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    {% for post in site.posts limit:5 %}
+                    <li style="margin-bottom: 12px;">
+                        <a href="{{ post.url | relative_url }}" style="font-size: 0.9em; line-height: 1.4;">{{ post.title }}</a>
+                        <div style="font-size: 0.8em; color: #888; margin-top: 4px;">{{ post.date | date: "%Y年%m月%d日" }}</div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer style="margin-top: 50px; padding: 20px; text-align: center; color: #888; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
         <p>&copy; 2025 {{ site.title }}</p>
     </footer>
 
     <!-- Custom Search Implementation -->
     <script>
         let searchData = [];
-        
-        window.addEventListener('DOMContentLoaded', function() {
+
+        window.addEventListener('DOMContentLoaded', function () {
             // search.json を fetch で読み込み
             fetch('/tech-blog/search.json')
                 .then(response => response.json())
@@ -234,24 +557,24 @@
                 .catch(error => {
                     console.error('検索データの読み込みに失敗:', error);
                 });
-            
+
             // 検索機能の実装
             const searchInput = document.getElementById('search-input');
             const resultsContainer = document.getElementById('search-results');
-            
-            searchInput.addEventListener('input', function() {
+
+            searchInput.addEventListener('input', function () {
                 const query = this.value.toLowerCase().trim();
-                
+
                 if (query === '') {
                     resultsContainer.innerHTML = '';
                     return;
                 }
-                
-                const results = searchData.filter(item => 
-                    item.title.toLowerCase().includes(query) || 
+
+                const results = searchData.filter(item =>
+                    item.title.toLowerCase().includes(query) ||
                     item.content.toLowerCase().includes(query)
                 );
-                
+
                 if (results.length === 0) {
                     resultsContainer.innerHTML = '<div class="no-results">該当する記事が見つかりませんでした</div>';
                 } else {

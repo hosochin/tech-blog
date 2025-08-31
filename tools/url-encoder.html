@@ -1,0 +1,200 @@
+---
+layout: default
+title: URLエンコード・デコード
+---
+
+<h1>URLエンコード・デコードツール</h1>
+
+<div class="tool-container">
+    <div class="input-section">
+        <label for="input-text">テキストを入力:</label>
+        <textarea id="input-text" placeholder="エンコード・デコードしたいテキストを入力してください" rows="6"></textarea>
+    </div>
+
+    <div class="button-section">
+        <button onclick="encodeText()" class="action-btn encode-btn">エンコード</button>
+        <button onclick="decodeText()" class="action-btn decode-btn">デコード</button>
+        <button onclick="clearText()" class="action-btn clear-btn">クリア</button>
+    </div>
+
+    <div class="output-section">
+        <label for="output-text">結果:</label>
+        <textarea id="output-text" readonly rows="6"></textarea>
+        <button onclick="copyToClipboard()" class="copy-btn">コピー</button>
+    </div>
+
+    <div class="info-section">
+        <h3>URLエンコードとは？</h3>
+        <p>URLエンコードは、URLに含めることができない文字（日本語、スペース、記号等）を、URLで使用可能な文字列に変換する処理です。</p>
+        
+        <h4>よくある例:</h4>
+        <ul>
+            <li><code>hello world</code> → <code>hello%20world</code></li>
+            <li><code>こんにちは</code> → <code>%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF</code></li>
+            <li><code>user@example.com</code> → <code>user%40example.com</code></li>
+        </ul>
+    </div>
+</div>
+
+<style>
+.tool-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.input-section, .output-section {
+    margin-bottom: 20px;
+}
+
+.input-section label, .output-section label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 14px;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #0066cc;
+}
+
+.button-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.action-btn {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.encode-btn {
+    background: #0066cc;
+    color: white;
+}
+
+.encode-btn:hover {
+    background: #0052a3;
+}
+
+.decode-btn {
+    background: #28a745;
+    color: white;
+}
+
+.decode-btn:hover {
+    background: #218838;
+}
+
+.clear-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.clear-btn:hover {
+    background: #545b62;
+}
+
+.copy-btn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #ffc107;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.copy-btn:hover {
+    background: #e0a800;
+}
+
+.info-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.info-section h3 {
+    margin: 0 0 10px 0;
+    color: #0066cc;
+}
+
+.info-section h4 {
+    margin: 20px 0 10px 0;
+    color: #333;
+}
+
+.info-section ul {
+    padding-left: 20px;
+}
+
+.info-section code {
+    background: #e9ecef;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #d63384;
+}
+</style>
+
+<script>
+function encodeText() {
+    const input = document.getElementById('input-text').value;
+    const encoded = encodeURIComponent(input);
+    document.getElementById('output-text').value = encoded;
+}
+
+function decodeText() {
+    const input = document.getElementById('input-text').value;
+    try {
+        const decoded = decodeURIComponent(input);
+        document.getElementById('output-text').value = decoded;
+    } catch (error) {
+        document.getElementById('output-text').value = 'エラー: 不正なURLエンコード文字列です';
+    }
+}
+
+function clearText() {
+    document.getElementById('input-text').value = '';
+    document.getElementById('output-text').value = '';
+}
+
+function copyToClipboard() {
+    const output = document.getElementById('output-text');
+    output.select();
+    output.setSelectionRange(0, 99999);
+    
+    try {
+        document.execCommand('copy');
+        const btn = document.querySelector('.copy-btn');
+        const originalText = btn.textContent;
+        btn.textContent = 'コピーしました!';
+        btn.style.background = '#28a745';
+        
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '#ffc107';
+        }, 2000);
+    } catch (err) {
+        alert('コピーに失敗しました');
+    }
+}
+</script>
