@@ -1,0 +1,319 @@
+---
+layout: default
+title: ユニコード変換
+---
+
+<h1>ユニコード変換ツール</h1>
+
+<div class="tool-container">
+    <div class="input-section">
+        <label for="input-text">テキストを入力:</label>
+        <textarea id="input-text" placeholder="変換したいテキストを入力してください" rows="6"></textarea>
+    </div>
+
+    <div class="button-section">
+        <button onclick="toUnicodeEscape()" class="action-btn encode-btn">Unicode エスケープ</button>
+        <button onclick="fromUnicodeEscape()" class="action-btn decode-btn">Unicode デコード</button>
+        <button onclick="toCodePoints()" class="action-btn info-btn">コードポイント表示</button>
+        <button onclick="clearText()" class="action-btn clear-btn">クリア</button>
+    </div>
+
+    <div class="output-section">
+        <label for="output-text">結果:</label>
+        <textarea id="output-text" readonly rows="6"></textarea>
+        <button onclick="copyToClipboard()" class="copy-btn">コピー</button>
+    </div>
+
+    <div class="info-section">
+        <h3>ユニコード変換とは？</h3>
+        <p>テキストをUnicodeエスケープシーケンス（\uXXXX形式）に変換したり、逆変換を行うツールです。プログラミングや国際化対応で使用されます。</p>
+
+        <h4>変換例:</h4>
+        <div class="example-grid">
+            <div class="example-card">
+                <h5>日本語</h5>
+                <p><strong>元:</strong> こんにちは</p>
+                <p><strong>Unicode:</strong> \u3053\u3093\u306b\u3061\u306f</p>
+            </div>
+
+            <div class="example-card">
+                <h5>絵文字</h5>
+                <p><strong>元:</strong> 😀🎉</p>
+                <p><strong>Unicode:</strong> \ud83d\ude00\ud83c\udf89</p>
+            </div>
+
+            <div class="example-card">
+                <h5>特殊文字</h5>
+                <p><strong>元:</strong> ©™®</p>
+                <p><strong>Unicode:</strong> \u00a9\u2122\u00ae</p>
+            </div>
+        </div>
+
+        <h4>主な用途:</h4>
+        <ul>
+            <li>JSON内での日本語・絵文字の安全な格納</li>
+            <li>プログラムコード内でのUnicode文字表現</li>
+            <li>Webアプリケーションの国際化対応</li>
+            <li>文字エンコーディング問題の回避</li>
+            <li>文字のコードポイント確認・デバッグ</li>
+        </ul>
+    </div>
+</div>
+
+<style>
+    .tool-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .input-section,
+    .output-section {
+        margin-bottom: 20px;
+    }
+
+    .input-section label,
+    .output-section label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        font-family: 'Monaco', 'Menlo', monospace;
+        font-size: 14px;
+        resize: vertical;
+        transition: border-color 0.2s ease;
+    }
+
+    textarea:focus {
+        outline: none;
+        border-color: #0066cc;
+    }
+
+    .button-section {
+        text-align: center;
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .action-btn {
+        padding: 10px 18px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .encode-btn {
+        background: #0066cc;
+        color: white;
+    }
+
+    .encode-btn:hover {
+        background: #0052a3;
+    }
+
+    .decode-btn {
+        background: #28a745;
+        color: white;
+    }
+
+    .decode-btn:hover {
+        background: #218838;
+    }
+
+    .info-btn {
+        background: #17a2b8;
+        color: white;
+    }
+
+    .info-btn:hover {
+        background: #138496;
+    }
+
+    .clear-btn {
+        background: #6c757d;
+        color: white;
+    }
+
+    .clear-btn:hover {
+        background: #545b62;
+    }
+
+    .copy-btn {
+        margin-top: 10px;
+        padding: 8px 16px;
+        background: #ffc107;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .copy-btn:hover {
+        background: #e0a800;
+    }
+
+    .info-section {
+        background: #f8f9fa;
+        padding: 25px;
+        border-radius: 8px;
+        margin-top: 30px;
+    }
+
+    .info-section h3 {
+        margin: 0 0 15px 0;
+        color: #0066cc;
+    }
+
+    .info-section h4 {
+        margin: 20px 0 10px 0;
+        color: #333;
+    }
+
+    .info-section h5 {
+        margin: 0 0 8px 0;
+        color: #0066cc;
+        font-size: 0.9em;
+    }
+
+    .example-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        margin: 15px 0;
+    }
+
+    .example-card {
+        background: white;
+        padding: 15px;
+        border-radius: 6px;
+        border-left: 4px solid #0066cc;
+    }
+
+    .example-card p {
+        margin: 5px 0;
+        font-size: 0.85em;
+    }
+
+    .example-card strong {
+        color: #333;
+    }
+
+    .info-section ul {
+        padding-left: 20px;
+        color: #555;
+    }
+
+    @media (max-width: 768px) {
+        .button-section {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .action-btn {
+            width: 200px;
+        }
+
+        .example-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<script>
+    function toUnicodeEscape() {
+        const input = document.getElementById('input-text').value;
+        try {
+            let result = '';
+            for (let i = 0; i < input.length; i++) {
+                const char = input.charAt(i);
+                const code = char.charCodeAt(0);
+
+                // ASCII文字（32-126）はそのまま、それ以外はエスケープ
+                if (code >= 32 && code <= 126 && !/[\\"]/.test(char)) {
+                    result += char;
+                } else {
+                    result += '\\u' + ('0000' + code.toString(16)).slice(-4);
+                }
+            }
+            document.getElementById('output-text').value = result;
+        } catch (error) {
+            document.getElementById('output-text').value = 'エラー: 変換できません';
+        }
+    }
+
+    function fromUnicodeEscape() {
+        const input = document.getElementById('input-text').value;
+        try {
+            // \uXXXX形式のUnicodeエスケープをデコード
+            const result = input.replace(/\\u([0-9a-fA-F]{4})/g, function (match, hex) {
+                return String.fromCharCode(parseInt(hex, 16));
+            });
+            document.getElementById('output-text').value = result;
+        } catch (error) {
+            document.getElementById('output-text').value = 'エラー: 不正なUnicodeエスケープです';
+        }
+    }
+
+    function toCodePoints() {
+        const input = document.getElementById('input-text').value;
+        try {
+            let result = '';
+            for (let i = 0; i < input.length; i++) {
+                const char = input.charAt(i);
+                const code = char.charCodeAt(0);
+                const hex = code.toString(16).toUpperCase();
+                const unicode = '\\u' + ('0000' + hex).slice(-4);
+
+                result += `"${char}" → U+${('0000' + hex).slice(-4)} (${code}) → ${unicode}\n`;
+            }
+            document.getElementById('output-text').value = result;
+        } catch (error) {
+            document.getElementById('output-text').value = 'エラー: 解析できません';
+        }
+    }
+
+    function clearText() {
+        document.getElementById('input-text').value = '';
+        document.getElementById('output-text').value = '';
+    }
+
+    function copyToClipboard() {
+        const output = document.getElementById('output-text');
+        output.select();
+        output.setSelectionRange(0, 99999);
+
+        try {
+            document.execCommand('copy');
+            const btn = document.querySelector('.copy-btn');
+            const originalText = btn.textContent;
+            btn.textContent = 'コピーしました!';
+            btn.style.background = '#28a745';
+
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '#ffc107';
+            }, 2000);
+        } catch (err) {
+            alert('コピーに失敗しました');
+        }
+    }
+
+    // サンプル入力の設定
+    window.addEventListener('DOMContentLoaded', function () {
+        setTimeout(() => {
+            document.getElementById('input-text').value = 'こんにちは 🎉 Hello World!';
+        }, 100);
+    });
+</script>

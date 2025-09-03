@@ -21,9 +21,9 @@ title: ツール
     </div>
 
     <div class="tool-card">
-        <h3>JSON整形・圧縮</h3>
-        <p>JSONデータの整形・圧縮・バリデーションツールです。</p>
-        <a href="{{ '/tools/json-formatter/' | relative_url }}" class="tool-link">使ってみる</a>
+        <h3>ユニコード変換</h3>
+        <p>テキストとUnicodeエスケープ（\uXXXX）の相互変換ツールです。</p>
+        <a href="{{ '/tools/unicode-converter/' | relative_url }}" class="tool-link">使ってみる</a>
     </div>
 
     <div class="tool-card">
