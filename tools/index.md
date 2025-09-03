@@ -11,25 +11,25 @@ title: ツール
     <div class="tool-card">
         <h3>URLエンコード・デコード</h3>
         <p>URLエンコード・デコードを簡単に行えるツールです。</p>
-        <a href="url-encoder.html" class="tool-link">使ってみる</a>
+        <a href="{{ '/tools/url-encoder/' | relative_url }}" class="tool-link">使ってみる</a>
     </div>
 
     <div class="tool-card">
         <h3>Base64エンコード・デコード</h3>
         <p>Base64形式のエンコード・デコードツールです。</p>
-        <a href="base64.html" class="tool-link">使ってみる</a>
+        <a href="{{ '/tools/base64/' | relative_url }}" class="tool-link">使ってみる</a>
     </div>
 
     <div class="tool-card">
         <h3>JSON整形・圧縮</h3>
         <p>JSONデータの整形・圧縮・バリデーションツールです。</p>
-        <a href="json-formatter.html" class="tool-link">使ってみる</a>
+        <a href="{{ '/tools/json-formatter/' | relative_url }}" class="tool-link">使ってみる</a>
     </div>
 
     <div class="tool-card">
         <h3>パスワード生成</h3>
         <p>セキュアなパスワードを生成するツールです。</p>
-        <a href="password-generator.html" class="tool-link">使ってみる</a>
+        <a href="{{ '/tools/password-generator/' | relative_url }}" class="tool-link">使ってみる</a>
     </div>
 </div>
 

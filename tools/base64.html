@@ -1,0 +1,222 @@
+---
+layout: default
+title: Base64エンコード・デコード
+---
+
+<h1>Base64エンコード・デコードツール</h1>
+
+<div class="tool-container">
+    <div class="input-section">
+        <label for="input-text">テキストを入力:</label>
+        <textarea id="input-text" placeholder="エンコード・デコードしたいテキストを入力してください" rows="6"></textarea>
+    </div>
+
+    <div class="button-section">
+        <button onclick="encodeBase64()" class="action-btn encode-btn">エンコード</button>
+        <button onclick="decodeBase64()" class="action-btn decode-btn">デコード</button>
+        <button onclick="clearText()" class="action-btn clear-btn">クリア</button>
+    </div>
+
+    <div class="output-section">
+        <label for="output-text">結果:</label>
+        <textarea id="output-text" readonly rows="6"></textarea>
+        <button onclick="copyToClipboard()" class="copy-btn">コピー</button>
+    </div>
+
+    <div class="info-section">
+        <h3>Base64エンコードとは？</h3>
+        <p>Base64エンコードは、バイナリデータをASCII文字列に変換する手法です。メールの添付ファイルやWeb APIでのデータ送信などで広く使用されています。</p>
+        
+        <h4>特徴:</h4>
+        <ul>
+            <li>バイナリデータを安全にテキストとして送信可能</li>
+            <li>64種類の文字（A-Z, a-z, 0-9, +, /）を使用</li>
+            <li>元データより約33%サイズが増加</li>
+            <li>パディング文字「=」でデータ長を調整</li>
+        </ul>
+        
+        <h4>よくある例:</h4>
+        <ul>
+            <li><code>Hello</code> → <code>SGVsbG8=</code></li>
+            <li><code>こんにちは</code> → <code>44GT44KT44Gr44Gh44Gv</code></li>
+            <li><code>123456</code> → <code>MTIzNDU2</code></li>
+        </ul>
+
+        <h4>主な用途:</h4>
+        <ul>
+            <li>メールの添付ファイル（MIME）</li>
+            <li>Web API での画像データ送信</li>
+            <li>JSON内でのバイナリデータ格納</li>
+            <li>Basic認証のユーザー名・パスワード</li>
+        </ul>
+    </div>
+</div>
+
+<style>
+.tool-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.input-section, .output-section {
+    margin-bottom: 20px;
+}
+
+.input-section label, .output-section label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 14px;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #0066cc;
+}
+
+.button-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.action-btn {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.encode-btn {
+    background: #0066cc;
+    color: white;
+}
+
+.encode-btn:hover {
+    background: #0052a3;
+}
+
+.decode-btn {
+    background: #28a745;
+    color: white;
+}
+
+.decode-btn:hover {
+    background: #218838;
+}
+
+.clear-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.clear-btn:hover {
+    background: #545b62;
+}
+
+.copy-btn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #ffc107;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.copy-btn:hover {
+    background: #e0a800;
+}
+
+.info-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.info-section h3 {
+    margin: 0 0 10px 0;
+    color: #0066cc;
+}
+
+.info-section h4 {
+    margin: 20px 0 10px 0;
+    color: #333;
+}
+
+.info-section ul {
+    padding-left: 20px;
+}
+
+.info-section code {
+    background: #e9ecef;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #d63384;
+}
+</style>
+
+<script>
+function encodeBase64() {
+    const input = document.getElementById('input-text').value;
+    try {
+        // UTF-8文字列をBase64にエンコード
+        const encoded = btoa(unescape(encodeURIComponent(input)));
+        document.getElementById('output-text').value = encoded;
+    } catch (error) {
+        document.getElementById('output-text').value = 'エラー: エンコードできません';
+    }
+}
+
+function decodeBase64() {
+    const input = document.getElementById('input-text').value;
+    try {
+        // Base64をUTF-8文字列にデコード
+        const decoded = decodeURIComponent(escape(atob(input)));
+        document.getElementById('output-text').value = decoded;
+    } catch (error) {
+        document.getElementById('output-text').value = 'エラー: 不正なBase64文字列です';
+    }
+}
+
+function clearText() {
+    document.getElementById('input-text').value = '';
+    document.getElementById('output-text').value = '';
+}
+
+function copyToClipboard() {
+    const output = document.getElementById('output-text');
+    output.select();
+    output.setSelectionRange(0, 99999);
+    
+    try {
+        document.execCommand('copy');
+        const btn = document.querySelector('.copy-btn');
+        const originalText = btn.textContent;
+        btn.textContent = 'コピーしました!';
+        btn.style.background = '#28a745';
+        
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '#ffc107';
+        }, 2000);
+    } catch (err) {
+        alert('コピーに失敗しました');
+    }
+}
+</script>
