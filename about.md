@@ -26,18 +26,37 @@ title: About
     </div>
 
     <div class="about-section">
-        <h3>技術スタック</h3>
-        <div class="tech-tags">
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Go</span>
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">Django</span>
-            <span class="tech-tag">PostgreSQL</span>
-            <span class="tech-tag">Docker</span>
-            <span class="tech-tag">AWS</span>
-            <span class="tech-tag">GitHub Actions</span>
+        <h3>投稿記事カテゴリ</h3>
+        <div class="tag-chart">
+            {% assign sorted_tags = site.tags | sort %}
+            {% assign tag_array = "" | split: "" %}
+            {% for tag in sorted_tags %}
+                {% assign tag_data = tag[0] | append: "||" | append: tag[1].size %}
+                {% assign tag_array = tag_array | push: tag_data %}
+            {% endfor %}
+            {% assign tag_array = tag_array | sort | reverse %}
+            
+            {% assign max_count = 0 %}
+            {% for tag_data in tag_array %}
+                {% assign tag_parts = tag_data | split: "||" %}
+                {% assign count = tag_parts[1] | plus: 0 %}
+                {% if count > max_count %}
+                    {% assign max_count = count %}
+                {% endif %}
+            {% endfor %}
+            
+            {% for tag_data in tag_array %}
+                {% assign tag_parts = tag_data | split: "||" %}
+                {% assign tag_name = tag_parts[0] %}
+                {% assign tag_count = tag_parts[1] | plus: 0 %}
+            <div class="chart-item">
+                <div class="chart-label">{{ tag_name }}</div>
+                <div class="chart-bar-container">
+                    <div class="chart-bar" style="width: {% if max_count > 0 %}{{ tag_count | times: 100 | divided_by: max_count }}%{% else %}0%{% endif %}"></div>
+                    <span class="chart-count">{{ tag_count }}</span>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -194,6 +213,57 @@ title: About
     border: 1px solid #e6f2ff;
 }
 
+.tag-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.chart-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.chart-label {
+    min-width: 120px;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #333;
+    text-align: right;
+}
+
+.chart-bar-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.chart-bar {
+    height: 24px;
+    background: linear-gradient(90deg, #0066cc, #4da3e0);
+    border-radius: 12px;
+    min-width: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 102, 204, 0.2);
+}
+
+.chart-bar:hover {
+    transform: scaleY(1.1);
+    box-shadow: 0 4px 8px rgba(0, 102, 204, 0.3);
+}
+
+.chart-count {
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #0066cc;
+    min-width: 20px;
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     .about-profile {
         flex-direction: column;
@@ -212,6 +282,19 @@ title: About
     
     .tech-tags {
         justify-content: center;
+    }
+    
+    .chart-label {
+        min-width: 80px;
+        font-size: 0.8em;
+    }
+    
+    .chart-bar {
+        height: 20px;
+    }
+    
+    .chart-count {
+        font-size: 0.8em;
     }
 }
 </style>

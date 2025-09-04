@@ -17,8 +17,12 @@ layout: default
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
     </div>
     <div class="post-meta">{{ post.date | date: "%Y年%m月%d日" }}</div>
-    {% if post.excerpt %}
-      <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</p>
+    {% if post.tags.size > 0 %}
+      <div class="post-tags">
+        {% for tag in post.tags limit:4 %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
     {% endif %}
   </li>
 {% endfor %}

@@ -29,8 +29,12 @@ title: アーカイブ
                         <h5 class="post-title">
                             <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
                         </h5>
-                        {% if post.excerpt %}
-                        <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 120 }}</p>
+                        {% if post.tags.size > 0 %}
+                        <div class="post-tags">
+                            {% for tag in post.tags limit:4 %}
+                            <span class="tag">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
                         {% endif %}
                     </div>
                 </div>
@@ -154,11 +158,21 @@ title: アーカイブ
     text-decoration: none;
 }
 
-.post-excerpt {
-    color: #666;
-    font-size: 0.9em;
-    line-height: 1.5;
-    margin: 0;
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.post-tags .tag {
+    background: #e8f4fd;
+    color: #0066cc;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-weight: 500;
+    border: 1px solid #d0e7ff;
 }
 
 .archive-stats {
