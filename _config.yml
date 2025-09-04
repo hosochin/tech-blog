@@ -6,6 +6,11 @@ permalink: /:title/
 
 markdown: kramdown
 highlighter: rouge
+
+kramdown:
+  auto_ids: true
+  toc_levels: 1..2
+  input: GFM
 plugins:
   - jekyll-sitemap
   - jekyll-feed
