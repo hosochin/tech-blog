@@ -5,7 +5,7 @@ date: 2020-07-26
 tags: [spring-boot, java, caffeine, cache, performance]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -23,7 +23,7 @@ CaffeineとはJava8で書かれたキャッシュライブラリです
 >
 > [github](https://github.com/ben-manes/caffeine)
 
-## 目次
+# 目次
 
 - [サンプル](#サンプル)
   - [実装](#実装)
@@ -31,9 +31,9 @@ CaffeineとはJava8で書かれたキャッシュライブラリです
   - [設定できる主なパラメータ](#設定できる主なパラメータ)
 - [まとめ](#まとめ)
 
-## サンプル
+# サンプル
 
-### 実装
+## 実装
 
 **build.gradle**
 
@@ -123,7 +123,7 @@ public class SampleController {
 }
 ```
 
-### 実行結果
+## 実行結果
 
 ```bash
 // 1回目のリクエスト
@@ -151,7 +151,7 @@ public class SampleController {
 
 うん、想定通り動いてそうです
 
-### 設定できる主なパラメータ
+## 設定できる主なパラメータ
 
 application.ymlで設定できる主なパラメータについてまとめときます
 
@@ -164,6 +164,6 @@ application.ymlで設定できる主なパラメータについてまとめと�
 
 詳しくは[こちら](https://www.javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/latest/com/github/benmanes/caffeine/cache/Caffeine.html)
 
-## まとめ
+# まとめ
 
 簡単にキャッシュ機能を実装できました！

@@ -5,7 +5,7 @@ date: 2020-04-01
 tags: [java, stream, functional-programming]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです  
 
@@ -33,7 +33,7 @@ Optional<T> reduce(BinaryOperator<T> accumulator);
 
 特に引数3つバージョンがややこしい気がするのでこいつについてやっていきたいと思います
 
-## 目次
+# 目次
 
 - [サンプル](#サンプル)
   - [解説１](#解説１)
@@ -41,7 +41,7 @@ Optional<T> reduce(BinaryOperator<T> accumulator);
   - [解説３](#解説３)
 - [まとめ](#まとめ)
 
-## サンプル
+# サンプル
 
 リストの中の`"dog"`を数える処理を例にしてみます
 
@@ -64,7 +64,7 @@ public class TutorialStream {
                     return count + ("dog".equals(animal) ? 1 : 0);
                 }, (count1, count2) -> null // ・・・解説３
         );
-        
+
         System.out.println(dogCount + "匹");
     }
 }
@@ -86,13 +86,13 @@ animal : rabbit
 2匹
 ```
 
-### 解説１
+## 解説１
 
 reduceメソッドの第1引数 `U identity` です  
 Uはreduceメソッドの戻り値と一致する必要があるためint型になっています  
 後述する第2引数の `BiFunction<T,U,R>` のapplyメソッドの第1引数の初期値になります
 
-### 解説２
+## 解説２
 
 reduceメソッドの第2引数 `BiFunction<U, ? super T, U> accumulator` です  
 ここでは標準関数型インターフェースBitFunctionのapplyメソッドを実装しています  
@@ -108,7 +108,7 @@ BitFunctionは `apply(Object, Object)` を持つ関数インターフェース�
 （BitFunctionについて詳しくは[こちら](https://docs.oracle.com/javase/jp/8/docs/api/java/util/function/BiFunction.html)を参照）  
 サンプルではapplyメソッドはint型の第1引数とString型の第2引数を受け取り、int型の戻り値を返す実装をしています
 
-### 解説３
+## 解説３
 
 reduceメソッドの第3引数 `BinaryOperator<U> combiner` です  
 こいつは並列処理の場合のみ使われます  
@@ -153,7 +153,7 @@ count1 : 1, count2 : 1
 2匹
 ```
 
-## まとめ
+# まとめ
 
 やっぱりちょっとややこしいですね  
 関数型インターフェースについてはまたどこかでまとめてみたいなーと思います  

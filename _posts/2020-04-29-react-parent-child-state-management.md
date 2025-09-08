@@ -5,7 +5,7 @@ date: 2020-04-29
 tags: [react, javascript, js, java, frontend, state-management]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -15,20 +15,20 @@ tags: [react, javascript, js, java, frontend, state-management]
 
 今React勉強中でして、勉強がてらアプリ作っているんですが、子から親のStateを更新したいときがあったのでそのやり方のメモになります
 
-## 目次
+# 目次
 
 - [サンプル](#サンプル)
   - [サンプルの実行結果](#サンプルの実行結果)
   - [実装](#実装)
 - [まとめ](#まとめ)
 
-## サンプル
+# サンプル
 
 結論から言うと、**親コンポーネントのStateを更新する関数**を子コンポーネントに渡してやればOKです
 
 子コンポーネントのボタンを押すと、親コンポーネントのStateを更新するプログラムをサンプルにみていきます
 
-### サンプルの実行結果
+## サンプルの実行結果
 
 - 初期表示
 
@@ -38,7 +38,7 @@ tags: [react, javascript, js, java, frontend, state-management]
 
 ![更新後](/assets/react-parent-child-updated.png)
 
-### 実装
+## 実装
 
 **親コンポーネント**
 
@@ -97,7 +97,7 @@ export default class Child extends React.Component {
 }
 ```
 
-## まとめ
+# まとめ
 
 親コンポーネントのStateを更新する場合は、Stateを更新する用の関数を子コンポーネントに渡せばいいということでした
 

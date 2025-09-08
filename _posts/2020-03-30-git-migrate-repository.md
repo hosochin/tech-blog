@@ -5,7 +5,7 @@ date: 2020-03-30
 tags: [git, github]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです  
 昨日は雪降りましたね雪  
@@ -15,11 +15,11 @@ tags: [git, github]
 **Githubで既存リポジトリのソースを新規リポジトリにpushする方法**  
 についてまとめます  
 
-## サンプル
+# サンプル
 
 今回はold-repositoryの中身をnew-repositoryに移すのを例にやってみます 
 
-### 準備
+## 準備
 
 まずGithubのUI上から新規のリポジトリを作成しておきます  
 次にコピー元になる既存リポジトリをcloneしてきます
@@ -49,7 +49,7 @@ $ git push -u origin master
 ・・・しかしこれだとmasterブランチしかpushできていません。。  
 全branchを一括でpushする方法も紹介します
 
-### ブランチごと新規リポジトリにpushする
+## ブランチごと新規リポジトリにpushする
 
 まずは cloneしたリソースのディレクトリ上で、既存リポジトリのブランチを全てpullしてきます  
 `for remote in git branch -r; do git branch --track ${remote#origin/} $remote; done`で全てのブランチを取得しています

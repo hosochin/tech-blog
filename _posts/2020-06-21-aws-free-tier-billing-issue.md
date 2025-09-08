@@ -5,7 +5,7 @@ date: 2020-06-21
 tags: [aws, cloud, elastic-ip, billing, ec2]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -13,11 +13,11 @@ tags: [aws, cloud, elastic-ip, billing, ec2]
 
 EC2のt2.microは月750時間までは無料とういことで使ってみたんですが、**いきなり料金発生してる！なんで？** ってなったのでメモです
 
-## 目次
+# 目次
 
 - [調べてみた](#調べてみた)
 
-## 調べてみた
+# 調べてみた
 
 [AWS ドキュメント » Amazon EC2 » Linux インスタンス用ユーザーガイド » ネットワークとセキュリティ » Elastic IP アドレス](https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)
 

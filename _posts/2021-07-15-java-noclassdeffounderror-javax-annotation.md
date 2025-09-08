@@ -5,7 +5,7 @@ date: 2021-07-15
 tags: [java, android, gradle, annotation, error-fix]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -17,11 +17,11 @@ Error:java: java.lang.NoClassDefFoundError: javax/annotation/Generated
 
 って急に出るようになっちゃって困ったので解決策をメモっときます🍺
 
-## 目次
+# 目次
 
 - [解決方法](#解決方法)
 
-## 解決方法
+# 解決方法
 
 javaxのライブラリを追加してやる必要があるぽい  
 以下をbuild.gradleに追加する

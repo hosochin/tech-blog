@@ -5,7 +5,7 @@ date: 2021-01-03
 tags: [react-native, expo, android, google-maps, typescript, mobile-app]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -15,7 +15,7 @@ tags: [react-native, expo, android, google-maps, typescript, mobile-app]
 
 なお、取り扱うのはAndroidアプリについてです
 
-## 目次
+# 目次
 
 - [やってみる](#やってみる)
   - [1. Expoインストール](#1-expoインストール)
@@ -24,7 +24,7 @@ tags: [react-native, expo, android, google-maps, typescript, mobile-app]
   - [4. APIキーをapp.jsに追加](#4-apiキーをappjsに追加)
   - [5. 動かしてみる](#5-動かしてみる)
 
-## やってみる
+# やってみる
 
 [react-native-maps](https://github.com/react-native-maps/react-native-maps)というiOS,Androidアプリでマップを表示するコンポーネントがあるのでそいつを使っていきます！
 
@@ -38,7 +38,7 @@ Androidの場合はGoogle Mapを表示してくれる感じですねー
 
 > [【React Native】【Expo】Hello Worldしてみた]({{ '/react-native-expo-hello-world' | relative_url }})
 
-### 1. Expoインストール
+## 1. Expoインストール
 
 ```bash
 -- インストール
@@ -49,7 +49,7 @@ $ expo --version
 3.18.0
 ```
 
-### 2. プロジェクト作成
+## 2. プロジェクト作成
 
 ```bash
 -- プロジェクト作成、今回はテンプレートはblank (TypeScript)を選択
@@ -60,7 +60,7 @@ $ cd tutorial-react-native-maps
 $ expo install react-native-maps
 ```
 
-### 3. Maps SDK for Androidを有効にする
+## 3. Maps SDK for Androidを有効にする
 
 Google Cloud Platformから「Maps SDK for Android」を有効にします
 
@@ -68,7 +68,7 @@ Google Cloud Platformから「Maps SDK for Android」を有効にします
 
 上記の記事だとwebブラウザに表示しようとしているので「Maps JavaScript API」を使っていますが、「Maps SDK for Android」に置き換わる感じです
 
-### 4. APIキーをapp.jsに追加
+## 4. APIキーをapp.jsに追加
 
 3で作ったAPIキーをapp.jsに追加します
 
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-### 5. 動かしてみる
+## 5. 動かしてみる
 
 以下のコマンドをtutorial-react-native-maps配下で実行してやると、ブラウザが立ち上がってQRコードが表示されると思います
 

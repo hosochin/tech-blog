@@ -5,7 +5,7 @@ date: 2020-08-16
 tags: [spring-boot, jpa, spring-data-jpa, java, database, performance]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -24,7 +24,7 @@ Spring Data JPAではsaveメソッドを実行すると
 
 このselectを省略して処理速度を上げたいなと思ったときのメモになります
 
-## 目次
+# 目次
 
 - [先に結論](#先に結論)
 - [サンプル](#サンプル)
@@ -32,7 +32,7 @@ Spring Data JPAではsaveメソッドを実行すると
   - [実行結果](#実行結果)
 - [まとめ](#まとめ)
 
-## 先に結論
+# 先に結論
 
 先に結論を書いとくと、Entityクラスで[Persistable<ID>](https://spring.pleiades.io/spring-data/commons/docs/current/api/org/springframework/data/domain/Persistable.html)の[isNew](https://spring.pleiades.io/spring-data/commons/docs/current/api/org/springframework/data/domain/Persistable.html#isNew--)メソッドをオーバーライドしてあげることで実現できます
 
@@ -47,7 +47,7 @@ Spring Data JPAではsaveメソッドを実行すると
 
 （ただし既に同じPrimaryKeyのレコードが存在する場合はinsertできないので、saveメソッドでエラーが返ります）
 
-## サンプル
+# サンプル
 
 user_tableっていうテーブルにデータを投入しようと思います
 
@@ -64,7 +64,7 @@ mysql> desc user_table;
 +------------+-------------+------+-----+---------+-------+
 ```
 
-### ソースコード
+## ソースコード
 
 **Controller**
 
@@ -138,7 +138,7 @@ public class UserEntity implements Persistable<String> {
 }
 ```
 
-### 実行結果
+## 実行結果
 
 ```java
 // ログ確認（show-sqlをtrueにしとく）
@@ -156,7 +156,7 @@ Hibernate: insert into user_table (first_name, last_name, id) values (?, ?, ?)
 Hibernate: insert into user_table (first_name, last_name, id) values (?, ?, ?)
 ```
 
-## まとめ
+# まとめ
 
 エンティティクラスでPersistableをimplementして、isNewメソッドをtrueにしたらselectが省略されましたね
 

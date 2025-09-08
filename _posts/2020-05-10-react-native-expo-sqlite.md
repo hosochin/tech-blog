@@ -5,7 +5,7 @@ date: 2020-05-10
 tags: [react-native, expo, sqlite, javascript, mobile-app, database]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -19,12 +19,12 @@ React NativeとExpoについてはこちらを参照してください〜
 
 > [【React Native】【Expo】Hello Worldしてみた]({{ '/react-native-expo-hello-world' | relative_url }})
 
-## 目次
+# 目次
 
 - [チュートリアル](#チュートリアル)
 - [まとめ](#まとめ)
 
-## チュートリアル
+# チュートリアル
 
 **expo-sqliteをインストール**
 
@@ -154,6 +154,6 @@ select success
 select result:[{"id":1,"name":"Taro"},{"id":2,"name":"Jiro"}]
 ```
 
-## まとめ
+# まとめ
 
 簡単に端末内にデータを保存することができました！

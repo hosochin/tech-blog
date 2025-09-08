@@ -5,7 +5,7 @@ date: 2020-04-10
 tags: [react-native, android, javascript, mobile-app]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです  
 
@@ -16,7 +16,7 @@ tags: [react-native, android, javascript, mobile-app]
 と言いつつ環境構築でめちゃめちゃハマりました！  
 それでは紹介していきます
 
-## 目次
+# 目次
 
 - [環境構築](#環境構築)
 - [チュートリアル](#チュートリアル)
@@ -24,7 +24,7 @@ tags: [react-native, android, javascript, mobile-app]
 - [Hello Worldやってみる](#hello-worldやってみる)
 - [まとめ](#まとめ)
 
-## 環境構築
+# 環境構築
 
 [公式ドキュメント](https://reactnative.dev/docs/environment-setup)で丁寧に説明されていたのでこれ見ながらやりました（OSはwindows）  
 ざっくり言うと、
@@ -35,7 +35,7 @@ tags: [react-native, android, javascript, mobile-app]
 
 です
 
-## チュートリアル
+# チュートリアル
 
 プロジェクト作成→動作確認までやっていこうと思います
 
@@ -60,7 +60,7 @@ Execution failed for task ':app:installDebug'.
 
 ちょっと調べてみたら、どうやら `react-native run-android` を実行するまえにAndroidのエミュレータを起動しておかなければいけないっぽいです（iOSは大丈夫らしい）
 
-### Androidのエミュレータを起動
+## Androidのエミュレータを起動
 
 エミュレータの起動ちょっと分かりづらいです  
 まずAndroidStudioを起動します  
@@ -109,7 +109,7 @@ react-native run-android
 やっとできたぁ。。上のように表示されればOKです  
 次にコードの一部を修正して「Hello World」を表示しようと思います
 
-## Hello Worldやってみる
+# Hello Worldやってみる
 
 **App.jsを以下のように修正**
 
@@ -141,7 +141,7 @@ export default App;
 
 Hello Worldできました～
 
-## まとめ
+# まとめ
 
 さくっと出来ると思ってたんですが無駄にハマった・・・  
 iOSだともっとすんなり行くんですかね？  

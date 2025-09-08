@@ -5,7 +5,7 @@ date: 2021-11-10
 tags: [sql, mysql, oracle, spring-data-jpa, database, operator-precedence]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -32,7 +32,7 @@ SELECT * FROM WHERE 条件A OR 条件B AND 条件C
 
 が、上記の２つのクエリを叩いてみると・・・取得結果は変わらず、「？」ってなった。
 
-## SQLの演算子の優先順位
+# SQLの演算子の優先順位
 
 演算子の優先順位的に括弧が無くても AND が先に処理されるということでした。。必要ないからspecification側で生成されたクエリには括弧が入ってないってだけだったんですね。
 

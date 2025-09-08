@@ -5,7 +5,7 @@ date: 2022-05-17
 tags: [junit, mockito, testing, spy, java]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -13,12 +13,12 @@ tags: [junit, mockito, testing, spy, java]
 
 環境はJunit5系 + Mockito3系です
 
-## 目次
+# 目次
 
 - [thenCallRealMethodを使う](#thencallrealmethodを使う)
 - [@Spyを使う](#spyを使う)
 
-## thenCallRealMethodを使う
+# thenCallRealMethodを使う
 
 thenCallRealMethodを使うと本物のメソッドの処理が実行されます
 
@@ -79,7 +79,7 @@ public class SampleControllerTest {
 }
 ```
 
-## @Spyを使う
+# @Spyを使う
 
 もちろんSpyでも同じことができます
 

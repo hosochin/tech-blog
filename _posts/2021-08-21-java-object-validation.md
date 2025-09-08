@@ -5,7 +5,7 @@ date: 2021-08-21
 tags: [java, validation, hibernate-validator, annotation, object-validation]
 ---
 
-## はじめに
+# はじめに
 
 お世話になってます、hosochinです
 
@@ -15,12 +15,12 @@ tags: [java, validation, hibernate-validator, annotation, object-validation]
 
 入力値のバリデーションというよりかは、例えばDBからデータを取得後に加工したあとのオブジェクトとかをバリデーションするイメージでやっていこうと思います👍
 
-## 目次
+# 目次
 
 - [動かしてみる](#動かしてみる)
   - [Collectionや他のオブジェクトをフィールドに持つ場合](#collectionや他のオブジェクトをフィールドに持つ場合)
 
-## 動かしてみる
+# 動かしてみる
 
 * オブジェクトクラス
 
@@ -93,7 +93,7 @@ propertyPath: id, message: null は許可されていません
 
 sampleObject.idはnullを設定しましたが、SampleObjectクラスでidはNotNullとなっているので引っかかりました
 
-### Collectionや他のオブジェクトをフィールドに持つ場合
+## Collectionや他のオブジェクトをフィールドに持つ場合
 
 collectionや他のオブジェクトの変数については、@Validアノテーションをつけてやらないと検証されないので注意です
 

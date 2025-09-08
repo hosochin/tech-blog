@@ -5,7 +5,7 @@ date: 2020-07-12
 tags: [spring-boot, java, aop, annotation, backend, aspect-oriented]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -13,13 +13,13 @@ tags: [spring-boot, java, aop, annotation, backend, aspect-oriented]
 **「Spring BootのAOPを使ってアノテーションを自作」**
 です
 
-## 目次
+# 目次
 
 - [AOPとは](#AOPとは)
 - [サンプル](#サンプル)
 - [まとめ](#まとめ)
 
-## AOPとは
+# AOPとは
 
 AOPとはアスペクト指向プログラミングの略です
 
@@ -31,7 +31,7 @@ AOPとはアスペクト指向プログラミングの略です
 
 で、SpringにもこのAOPの機能があるので今回はそれを使ってみたいと思います
 
-## サンプル
+# サンプル
 
 文字列を受け取って大文字や小文字に変換して返すというコントローラを作りたいと思います
 
@@ -122,7 +122,7 @@ curl "http://localhost:8080/lower-case?message=TEST"
 test
 ```
 
-## まとめ
+# まとめ
 
 とりあえずやりたいことはできました
 

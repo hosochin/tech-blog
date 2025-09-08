@@ -5,7 +5,7 @@ date: 2021-08-14
 tags: [github, git, authentication, personal-access-token, security, mac]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -32,11 +32,11 @@ fatal: unable to access 'https://github.com/user/repository.git/': The requested
 
 なのでパーソナルアクセストークンの設定をやっていこうと思います！
 
-## 目次
+# 目次
 
 - [パーソナルアクセストークンの作成](#パーソナルアクセストークンの作成)
 
-## パーソナルアクセストークンの作成
+# パーソナルアクセストークンの作成
 
 [ここ](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) 見ながらやっていきます
 

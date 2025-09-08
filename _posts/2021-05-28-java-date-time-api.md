@@ -5,7 +5,7 @@ date: 2021-05-28
 tags: [java, date-time, datetime, api, timezone]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -15,7 +15,7 @@ Javaの「**日時の取得と変換**」
 
 よく忘れます👍
 
-## 目次
+# 目次
 
 - [Date and Time APIについて](#date-and-time-apiについて)
   - [3つの時間表現](#3つの時間表現)
@@ -25,13 +25,13 @@ Javaの「**日時の取得と変換**」
   - [相互変換](#相互変換)
 - [まとめ](#まとめ)
 
-## Date and Time APIについて
+# Date and Time APIについて
 
 Javaでは日時を扱うライブラリとして、`java.util.Date`, `java.util.Calendar`などのライブラリも存在しますが、Java8以降は「**Date and Time API**」の使用が推奨されています
 
 なので今回は「**Date and Time API**」を取りあげます
 
-### 3つの時間表現
+## 3つの時間表現
 
 | [java.time.LocalDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html) | オフセット、タイムゾーンを持たない日時<br>例：2021-05-28T10:30:29.275 |
 |---|---|
@@ -43,7 +43,7 @@ Javaでは日時を扱うライブラリとして、`java.util.Date`, `java.util
 - タイムゾーン
   - 指定した地域のサマータイムなども考慮される、日本なら[Asia/Tokyo]
 
-### 現在日時の取得
+## 現在日時の取得
 
 ```java
 // 2021-05-28T10:30:29.273
@@ -56,7 +56,7 @@ OffsetDateTime.now();
 ZonedDateTime.now();
 ```
 
-### 時間を指定して初期化
+## 時間を指定して初期化
 
 ```java
 // 2021-05-27T10:30:10
@@ -69,7 +69,7 @@ OffsetDateTime.of(2021, 5, 27, 10, 30, 10, 0, ZoneOffset.ofHours(9));
 ZonedDateTime.of(2021, 5, 27, 10, 30, 10, 0, ZoneId.of("Asia/Tokyo"));
 ```
 
-### 文字列 > 日時の変換
+## 文字列 > 日時の変換
 
 ```java
 // 2021-05-27T10:30:10
@@ -88,7 +88,7 @@ ZonedDateTime.parse("2021-05-27T10:30:10+09:00[Asia/Tokyo]");
 ZonedDateTime.parse("2021/05/27 10:30:10 Asia/Tokyo", DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss VV"));
 ```
 
-### 相互変換
+## 相互変換
 
 ```java
 // LocalDateTime -> OffsetDateTime
@@ -107,6 +107,6 @@ System.out.println(ZonedDateTime.now().toLocalDateTime());
 System.out.println(ZonedDateTime.now().toOffsetDateTime());
 ```
 
-## まとめ
+# まとめ
 
 とりあえずZonedDateTime使っとけばいいらしい🍺

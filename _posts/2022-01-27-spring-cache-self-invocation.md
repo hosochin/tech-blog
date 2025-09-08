@@ -5,7 +5,7 @@ date: 2022-01-27
 tags: [spring-boot, cache, caffeine, proxy, aop, java]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -21,12 +21,12 @@ Caffeineについてはこちら
 
 ・[【Spring Boot】Caffeineを使ってローカルキャッシュしてみる]({{ '/spring-boot-caffeine-cache' | relative_url }})
 
-## 目次
+# 目次
 
 - [やってみる](#やってみる)
   - [問題は同一オブジェクトからキャッシュ対象のメソッドを呼んだとき](#問題は同一オブジェクトからキャッシュ対象のメソッドを呼んだとき)
 
-## やってみる
+# やってみる
 
 検証に使ったソースコードをばーっと貼っときます
 
@@ -91,7 +91,7 @@ loadMessageCacheを呼び出してみると引数が同じ場合にキャッシ�
 
 が、loadMessageを呼んでみると…毎回ログが出力されてキャッシュが効いていないことがわかります😇
 
-### 問題は同一オブジェクトからキャッシュ対象のメソッドを呼んだとき
+## 問題は同一オブジェクトからキャッシュ対象のメソッドを呼んだとき
 
 [Spring Framework ドキュメント](https://spring.pleiades.io/spring-framework/docs/current/reference/html/integration.html#cache-annotation-enable) に書いてありました😎
 

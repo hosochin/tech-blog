@@ -5,7 +5,7 @@ date: 2020-04-15
 tags: [react-native, expo, javascript, mobile-app]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです  
 
@@ -17,7 +17,7 @@ tags: [react-native, expo, javascript, mobile-app]
 
 ということで早速Expo使ってみたいと思います
 
-## 目次
+# 目次
 
 - [Expoとは](#expoとは)
 - [チュートリアル](#チュートリアル)
@@ -27,7 +27,7 @@ tags: [react-native, expo, javascript, mobile-app]
   - [4. Hello Worldしてみる](#4-hello-worldしてみる)
 - [まとめ](#まとめ)
 
-## Expoとは
+# Expoとは
 
 React-Native使ってモバイル開発するぞーってなっても結局ネイティブの部分の知識が必要になったり、iOS/Androidのビルドを自前でやる必要があるのでビルド自体が重かったり、ビルド周りでハマったり・・・
 
@@ -41,7 +41,7 @@ Expoは実装済みのネイティブコードを提供してくれるツール�
 - 自前でiOS/Androidのビルドが必要なくなる
 - ビルドが必要ないのでアプリの審査を待たずにリリース可能
 
-## チュートリアル
+# チュートリアル
 
 以下の流れを[公式](https://docs.expo.io/versions/v37.0.0/get-started/installation/)見ながらやっていこうと思います
 
@@ -50,7 +50,7 @@ Expoは実装済みのネイティブコードを提供してくれるツール�
 3. 動かしてみる
 4. Hello Worldしてみる
 
-### 1. Expoインストール
+## 1. Expoインストール
 
 ```bash
 $ npm install --global expo-cli
@@ -59,7 +59,7 @@ $ expo --version
 3.18.0
 ```
 
-### 2. プロジェクト作成
+## 2. プロジェクト作成
 
 ```bash
 $ expo init tutorial-expo
@@ -90,7 +90,7 @@ package.json
 React-Nativeに比べてandroidとiosのフォルダがないですね  
 これはExpoがネイティブコードの責任を持ってくれるからです
 
-### 3. 動かしてみる
+## 3. 動かしてみる
 
 専用のアプリをインストールする必要がありますが、実機でやるのがお手軽だと思います  
 - AndroidならGooglePlayから「Expo」をインストール  
@@ -120,7 +120,7 @@ npm start
 
 サーバは起動したままにして次の「Hello Worldしてみる」をやっていきたいと思います
 
-### 4. Hello Worldしてみる
+## 4. Hello Worldしてみる
 
 プロジェクト直下の `App.js` を編集します  
 Textタグの中の「Open up App.js to start working on your app!」を「Hello World」に変えてみます  
@@ -146,7 +146,7 @@ export default function App() {
 
 はやい・・・速攻反映されます、普通におおーーってなりました
 
-## まとめ
+# まとめ
 
 React-Nativeで簡単なモバイルアプリ開発するときはExpo使うのが良さそうって話でした  
 とりあえずサクサク反映されるのはいいですねー

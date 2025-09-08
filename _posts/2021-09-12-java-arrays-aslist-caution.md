@@ -5,7 +5,7 @@ date: 2021-09-12
 tags: [java, arrays, list, collection, exception]
 ---
 
-## はじめに
+# はじめに
 
 お世話になってます、hosochinです
 
@@ -15,12 +15,12 @@ tags: [java, arrays, list, collection, exception]
 
 Arrays.asList()って便利ですが使うときにはちょっと注意しないとだったりします
 
-## 目次
+# 目次
 
 - [Arrays.asListについて](#arraysaslistについて)
   - [それでも1行で書きたい場合...](#それでも1行で書きたい場合)
 
-## Arrays.asListについて
+# Arrays.asListについて
 
 Arrays.asList()は、java.util.Arraysで定義されているメソッドです
 
@@ -76,7 +76,7 @@ Arrays.asList()は配列をListにラップしてるみたいなイメージっ�
 
 そのため、サイズが変わるような操作（要素の追加・削除）はできないです
 
-### それでも1行で書きたい場合...
+## それでも1行で書きたい場合...
 
 以下は要素の追加・削除が可能なリストになります👍
 

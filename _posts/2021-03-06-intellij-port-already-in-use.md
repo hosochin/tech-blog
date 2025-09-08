@@ -5,7 +5,7 @@ date: 2021-03-06
 tags: [intellij, java, spring-boot, troubleshooting, port]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -37,11 +37,11 @@ Verify the connector's configuration, identify and stop any process that's liste
 
 そういえば30分経過で強制的に落とされた時にアプリケーション起動してたなーと
 
-## 目次
+# 目次
 
 - [解決方法](#解決方法)
 
-## 解決方法
+# 解決方法
 
 解決方法というほどでもないんですが、無料版使ってるとよくあるのでただのメモ
 

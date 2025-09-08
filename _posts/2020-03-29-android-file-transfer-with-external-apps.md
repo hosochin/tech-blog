@@ -5,7 +5,7 @@ date: 2020-03-29
 tags: [Android, Java, Kotlin, ファイル操作]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです  
 最近家でラーメン二郎ごっこやってお腹ぶっ壊しました
@@ -14,9 +14,9 @@ tags: [Android, Java, Kotlin, ファイル操作]
 少し前に作っていたAndroidアプリで、zipファイルを外部アプリ（mail、Lineとか）使って転送する機能を実装しようとして、ハマったのでそのメモになります  
 結論としては、Android7から『file://』による指定ができなくなったため、fileproviderでuriを作る必要がありました
 
-## サンプルコード
+# サンプルコード
 
-### AndroidManifest.xml
+## AndroidManifest.xml
 
 ```xml
 <application>
@@ -34,7 +34,7 @@ tags: [Android, Java, Kotlin, ファイル操作]
 </application>
 ```
 
-### MainActivity.kt
+## MainActivity.kt
 
 ```kotlin
 // zipファイルのパス
@@ -54,7 +54,7 @@ intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION or Intent.FLAG_GRANT_READ
 startActivity(intent)
 ```
 
-### res/xml/file_provider.xml
+## res/xml/file_provider.xml
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -63,17 +63,17 @@ startActivity(intent)
 </resources>
 ```
 
-### external-pathの設定について
+## external-pathの設定について
 
 - **name**: 適当
 - **path**: Environment.getExternalStorageDirectory()直下を指定するため`.`を設定
 
-## まとめ
+# まとめ
 
 どうやらキモは `file_provider.xml` っぽい  
 転送したい対象のファイルの場所によってxmlの書き方も変わるので以下にまとめておきます
 
-### ファイル場所別の設定
+## ファイル場所別の設定
 
 | ファイルの場所 | 設定 |
 |---|---|

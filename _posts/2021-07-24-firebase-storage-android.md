@@ -5,7 +5,7 @@ date: 2021-07-24
 tags: [firebase, storage, android, authentication, mbaas, google]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -15,14 +15,14 @@ tags: [firebase, storage, android, authentication, mbaas, google]
 
 チュートリアル見ながら進めたはずなんですが、いくつか躓いたのでそこら辺を中心にまとめようと思います
 
-## 目次
+# 目次
 
 - [Firebase、Storageについて](#firebasestorageについて)
 - [公式手順に従ってやってみる](#公式手順に従ってやってみる)
 - [よし、アプリ起動して接続するぜ...ん？](#よしアプリ起動して接続するぜん)
 - [まとめ](#まとめ)
 
-## Firebase、Storageについて
+# Firebase、Storageについて
 
 **「[Firebase](https://firebase.google.com/docs)」**はGoogleが提供しているmBaaS(mobile backend as aService)です
 
@@ -32,7 +32,7 @@ tags: [firebase, storage, android, authentication, mbaas, google]
 
 StorageはAWSでいうところのS3みたいなやつで、写真や動画などを保管・提供可能なオブジェクトストレージサービスになってます
 
-## 公式手順に従ってやってみる
+# 公式手順に従ってやってみる
 
 さっそくチュートリアルに従って進めようと思います
 
@@ -46,7 +46,7 @@ StorageはAWSでいうところのS3みたいなやつで、写真や動画な�
 
 [クイックスタートサンプル](https://github.com/firebase/quickstart-android/blob/master/storage/README.md)があるんでこいつを使ってStorageに接続したいと思います
 
-## よし、アプリ起動して接続するぜ...ん？
+# よし、アプリ起動して接続するぜ...ん？
 
 手順に従って設定し終えたんで、クイックスタートサンプルのAppを起動します
 
@@ -87,6 +87,6 @@ D/Storage#MainActivity: signInAnonymously:SUCCESS
 
 アップロードボタン押して画像がアップロードできることも確認できましたー
 
-## まとめ
+# まとめ
 
 公式手順に従ってすすめましたが、Authenticationの設定もしないとログインできないってのにちょっと手こずってしまいました😅

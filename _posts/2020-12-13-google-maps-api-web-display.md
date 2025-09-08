@@ -5,7 +5,7 @@ date: 2020-12-13
 tags: [google-maps-api, javascript, web-api, frontend, gcp]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -13,11 +13,11 @@ tags: [google-maps-api, javascript, web-api, frontend, gcp]
 **「Google Maps APIを使ってブラウザに地図を表示」**
 を試してみたいと思います
 
-## 目次
+# 目次
 
 - [やってみる](#やってみる)
 
-## やってみる
+# やってみる
 
 前提としてgoogleアカウント作成済みです👍
 

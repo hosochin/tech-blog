@@ -5,7 +5,7 @@ date: 2022-02-27
 tags: [intellij, java, ide, code-style, import]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -13,7 +13,7 @@ tags: [intellij, java, ide, code-style, import]
 
 が、プロジェクトによってはコーディング規約などでワイルドカードのimportを禁止している場合があり、この機能を無効にする手順をまとめました
 
-## 手順
+# 手順
 
 ItelliJ IDEA > Preference
 

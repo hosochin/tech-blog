@@ -5,7 +5,7 @@ date: 2021-10-03
 tags: [cloud-firestore, firebase, nosql, android, java, object-mapping]
 ---
 
-## はじめに
+# はじめに
 
 お世話になってます、hosochinです
 
@@ -13,12 +13,12 @@ tags: [cloud-firestore, firebase, nosql, android, java, object-mapping]
 **「Cloud Firestore でオブジェクトとしてデータを取得する」**  
 です
 
-## 目次
+# 目次
 
 - [Cloud Firestoreについて](#cloud-firestoreについて)
 - [Cloud Firestoreからデータを取得する](#cloud-firestoreからデータを取得する)
 
-## Cloud Firestoreについて
+# Cloud Firestoreについて
 
 [Cloud Firestore](https://firebase.google.com/docs/firestore?hl=ja) はGoogleのFirebaseで提供されてるNoSQLのデータベースです
 
@@ -26,7 +26,7 @@ tags: [cloud-firestore, firebase, nosql, android, java, object-mapping]
 
 そこそこ無料で使えるのもいいですね👍
 
-## Cloud Firestoreからデータを取得する
+# Cloud Firestoreからデータを取得する
 
 Cloud Firestoreには、「document」と「collection」という概念が存在します
 

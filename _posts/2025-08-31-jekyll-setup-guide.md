@@ -8,9 +8,9 @@ date: 2025-08-31
 
 Jekyll を使った静的サイトの構築方法について説明します。
 
-## 必要な構成ファイル
+# 必要な構成ファイル
 
-### _config.yml
+## _config.yml
 サイトの基本設定を行うファイルです。
 
 ```yaml
@@ -20,7 +20,7 @@ url: https://example.com
 permalink: /:title/
 ```
 
-### Gemfile
+## Gemfile
 Ruby のパッケージ管理ファイルです。
 
 ```ruby
@@ -28,15 +28,15 @@ source "https://rubygems.org"
 gem "github-pages", group: :jekyll_plugins
 ```
 
-## レイアウトファイル
+# レイアウトファイル
 
-### _layouts/default.html
+## _layouts/default.html
 全ページ共通のHTMLテンプレートです。
 
-### _layouts/post.html
+## _layouts/post.html
 記事ページ専用のテンプレートです。
 
-## 記事の作成
+# 記事の作成
 
 `_posts/YYYY-MM-DD-title.md` の形式でMarkdownファイルを作成します。
 
@@ -50,7 +50,7 @@ date: 2025-08-31
 記事の内容をここに書きます。
 ```
 
-## ローカルでの確認
+# ローカルでの確認
 
 ```bash
 bundle exec jekyll serve

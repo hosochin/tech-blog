@@ -5,14 +5,14 @@ date: 2022-01-17
 tags: [junit, spring, testing, reflection, mockito, java]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
 今回は  
 **「Junitでテスト対象クラスのprivateなフィールドの値を書き換える」です**
 
-## 目次
+# 目次
 
 - [やってみる](#やってみる)
   - [ReflectionTestUtilsを使う](#reflectiontestutilsを使う)
@@ -20,7 +20,7 @@ tags: [junit, spring, testing, reflection, mockito, java]
   - [リフレクションで書く](#リフレクションで書く)
   - [JMockitを使う](#jmockitを使う)
 
-## やってみる
+# やってみる
 
 * テスト対象のクラス
 
@@ -33,7 +33,7 @@ public class Sample {
 }
 ```
 
-### ReflectionTestUtilsを使う
+## ReflectionTestUtilsを使う
 
 Springプロジェクトなら[ReflectionTestUtils](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/test/util/ReflectionTestUtils.html)がおすすめ
 
@@ -57,7 +57,7 @@ public class SampleTest {
 }
 ```
 
-### Whiteboxを使う
+## Whiteboxを使う
 
 mockitoの[Whitebox](https://www.javadoc.io/doc/org.mockito/mockito-core/1.9.0/org/mockito/internal/util/reflection/Whitebox.html)を使った方法です
 
@@ -81,7 +81,7 @@ public class SampleTest {
 }
 ```
 
-### リフレクションで書く
+## リフレクションで書く
 
 モックライブラリを使わずに実現する方法です
 
@@ -109,7 +109,7 @@ public class SampleTest {
 }
 ```
 
-### JMockitを使う
+## JMockitを使う
 
 こちらはDeencapsulationというクラスのsetFiledメソッドを使う方法
 

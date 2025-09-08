@@ -5,7 +5,7 @@ date: 2021-04-01
 tags: [brew, mac, macos, homebrew, troubleshooting]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -13,11 +13,11 @@ tags: [brew, mac, macos, homebrew, troubleshooting]
 **「brew cask install XXXX したら、Error: Unknown command: cask」**
 って怒られた話です
 
-## 目次
+# 目次
 
 - [解決方法](#解決方法)
 
-## 解決方法
+# 解決方法
 
 結論から言うと brew cask install は廃止されたっぽいです
 

@@ -5,7 +5,7 @@ date: 2021-05-29
 tags: [bash, linux, shell, diff, command-line]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -13,7 +13,7 @@ tags: [bash, linux, shell, diff, command-line]
 
 diffコマンド使うときにいちいちファイルに書き出してから比較してる人いらっしゃいませんか？
 
-## コマンド出力結果を使ってdiffコマンド
+# コマンド出力結果を使ってdiffコマンド
 
 `<()` でコマンドを囲ってやるだけです👍
 

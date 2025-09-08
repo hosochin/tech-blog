@@ -5,7 +5,7 @@ date: 2022-05-03
 tags: [python, urllib, ssl, certificate, error-fix]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -42,7 +42,7 @@ import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 ```
 
-## ほかに試したこと
+# ほかに試したこと
 
 モジュールのアップデートなど試しましたが今回はうまくいかなかったです
 

@@ -5,7 +5,7 @@ date: 2021-10-07
 tags: [cloud-firestore, firebase, android, java, async, callback]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
@@ -13,7 +13,7 @@ tags: [cloud-firestore, firebase, android, java, async, callback]
 **「Cloud Firestoreで取得したデータを扱う」**  
 です
 
-## 目次
+# 目次
 
 - [Cloud Firestoreとは](#cloud-firestoreとは)
 - [取得したデータを表示してみたい](#取得したデータを表示してみたい)
@@ -21,7 +21,7 @@ tags: [cloud-firestore, firebase, android, java, async, callback]
   - [解決方法](#解決方法)
 - [まとめ](#まとめ)
 
-## Cloud Firestoreとは
+# Cloud Firestoreとは
 
 こちらの記事を参照してください
 
@@ -31,7 +31,7 @@ tags: [cloud-firestore, firebase, android, java, async, callback]
 
 今回は上記の記事の続きになります
 
-## 取得したデータを表示してみたい
+# 取得したデータを表示してみたい
 
 データ取得部分の実装はこんな感じです
 
@@ -72,7 +72,7 @@ public void findUser() {
 
 ….あれ、無理だなこれってなります😇
 
-### 原因
+## 原因
 
 [get()](https://firebase.google.com/docs/reference/android/com/google/firebase/firestore/DocumentReference?hl=ja#get())は非同期処理だからですね、戻り値の型はTask<QuerySnapshot>になってます
 
@@ -90,7 +90,7 @@ public User findUser() {
 }
 ```
 
-### 解決方法
+## 解決方法
 
 解決方法としては、
 
@@ -151,7 +151,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 いかがでしょうか、R.id.text_viewに取得結果が表示されたと思います👍
 
-## まとめ
+# まとめ
 
 この辺参考にさせていただきました、リンク貼っておきます
 

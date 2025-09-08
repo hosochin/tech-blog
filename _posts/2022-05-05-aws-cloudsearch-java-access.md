@@ -5,13 +5,13 @@ date: 2022-05-05
 tags: [aws, cloudsearch, java, spring-boot, full-text-search, sdk]
 ---
 
-## はじめに
+# はじめに
 
 お世話になります、hosochinです
 
 今回はCloudSearchをJavaで使いたいと思います
 
-## 目次
+# 目次
 
 - [前提](#前提)
 - [やってみる](#やってみる)
@@ -19,13 +19,13 @@ tags: [aws, cloudsearch, java, spring-boot, full-text-search, sdk]
   - [実装](#実装)
 - [まとめ](#まとめ)
 
-## 前提
+# 前提
 
 CloudSearchの環境構築 & データインポートまで終わっているとします
 
 環境構築とデータインポートの手順については、AWSの公式ドキュメントを参照してください
 
-## やってみる
+# やってみる
 
 awsが提供しているjavaライブラリの [AmazonCloudSearchDomain](https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/cloudsearchdomain/AmazonCloudSearchDomain.html) ってのを使って検索します
 
@@ -33,13 +33,13 @@ awsが提供しているjavaライブラリの [AmazonCloudSearchDomain](https:/
 
 しかし自作したサンプルデータ気が効かなすぎる。。チュートリアル用にCloudSearch側が用意したサンプルデータあるんでそっち使った方がよかったりする（今更）
 
-### 環境
+## 環境
 
 * Java: 1.8
 * SpringBoot: 2.6.7
 * Gradle: 7.4.1
 
-### 実装
+## 実装
 
 * build.gradleにaws-java-sdk-cloudsearchを追加
   * 最新バージョンは[こちら](https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-cloudsearch)
@@ -162,7 +162,7 @@ public class CloudSearchService {
 }
 ```
 
-## まとめ
+# まとめ
 
 適当なコントローラ作って実行してみるとちゃんととれました！
 

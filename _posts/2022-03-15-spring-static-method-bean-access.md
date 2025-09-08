@@ -5,7 +5,7 @@ date: 2022-03-15
 tags: [spring, java, dependency-injection, static-method, bean]
 ---
 
-## はじめに
+# はじめに
 
 お世話にになります、hosochinです
 
@@ -15,7 +15,7 @@ tags: [spring, java, dependency-injection, static-method, bean]
 
 まああんまりないとは思いますが…最近出会したのでメモです
 
-## やってみる
+# やってみる
 
 たとえばこんな感じでSampleComponentをコンストラクタインジェクションしているSampleUtilクラスがあったとして
 
