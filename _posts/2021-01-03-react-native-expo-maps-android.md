@@ -36,7 +36,7 @@ Androidの場合はGoogle Mapを表示してくれる感じですねー
 
 ちなみに、React NativeとExpoについてはこちらの記事で軽く触れました
 
-> [【React Native】【Expo】Hello Worldしてみた]({{ '/react-native-expo-hello-world/' | relative_url }})
+> [【React Native】【Expo】Hello Worldしてみた]({{ '/react-native-expo-hello-world' | relative_url }})
 
 ### 1. Expoインストール
 
@@ -64,7 +64,7 @@ $ expo install react-native-maps
 
 Google Cloud Platformから「Maps SDK for Android」を有効にします
 
-やり方は[【Google Maps API】webブラウザに地図を表示してみる]({{ '/google-maps-api-web-display/' | relative_url }})を参考にしてみてください
+やり方は[【Google Maps API】webブラウザに地図を表示してみる]({{ '/google-maps-api-web-display' | relative_url }})を参考にしてみてください
 
 上記の記事だとwebブラウザに表示しようとしているので「Maps JavaScript API」を使っていますが、「Maps SDK for Android」に置き換わる感じです
 

@@ -17,7 +17,7 @@ tags: [react-native, expo, sqlite, javascript, mobile-app, database]
 
 React NativeとExpoについてはこちらを参照してください〜
 
-> [【React Native】【Expo】Hello Worldしてみた]({{ '/react-native-expo-hello-world/' | relative_url }})
+> [【React Native】【Expo】Hello Worldしてみた]({{ '/react-native-expo-hello-world' | relative_url }})
 
 ## 目次
 

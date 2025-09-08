@@ -39,7 +39,7 @@ AOPとはアスペクト指向プログラミングの略です
 
 アノテーションを定義しているところの @Target や @Retention については別の記事でまとめてありますのでそちらを参考にしてください
 
-> [【Java】 アノテーションを自分で定義してみる]({{ '/java-custom-annotation/' | relative_url }})
+> [【Java】 アノテーションを自分で定義してみる]({{ '/java-custom-annotation' | relative_url }})
 
 **アノテーションを定義したクラス**
 
