@@ -2,7 +2,7 @@
 layout: post
 title: 【bash】curlした結果をdiffコマンドで比較
 date: 2022-06-18
-tags: [bash, curl, diff, api, command-line]
+tags: [bash, curl]
 ---
 
 # はじめに

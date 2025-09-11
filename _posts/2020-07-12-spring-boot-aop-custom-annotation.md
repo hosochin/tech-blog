@@ -2,7 +2,7 @@
 layout: post
 title: 【Spring Boot】AOPを使ってアノテーションを自作してみた
 date: 2020-07-12
-tags: [spring-boot, java, aop, annotation, backend, aspect-oriented]
+tags: [Spring Boot, Java, AOP]
 ---
 
 # はじめに

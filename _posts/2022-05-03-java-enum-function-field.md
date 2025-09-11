@@ -2,7 +2,7 @@
 layout: post
 title: 【Java】Enumの要素に関数を定義する
 date: 2022-05-03
-tags: [java, enum, functional-interface, design-pattern]
+tags: [Java]
 ---
 
 # はじめに

@@ -2,7 +2,7 @@
 layout: post
 title: 【Junit5】【ParameterizedTest】 2つ以上のパラメータをテストしたい場合
 date: 2022-10-09
-tags: [java, junit5, parameterized-test, method-source, csv-source, enum-source]
+tags: [Java, Junit5, テスト]
 ---
 
 # はじめに

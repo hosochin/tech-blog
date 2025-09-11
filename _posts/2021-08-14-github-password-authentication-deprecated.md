@@ -2,7 +2,7 @@
 layout: post
 title: 【GitHub】パスワード認証のサポートが廃止
 date: 2021-08-14
-tags: [github, git, authentication, personal-access-token, security, mac]
+tags: [github, git]
 ---
 
 # はじめに

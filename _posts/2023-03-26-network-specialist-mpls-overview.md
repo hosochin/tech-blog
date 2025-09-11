@@ -2,7 +2,7 @@
 layout: post
 title: 【ネスペ対策】【MPLS】MPLSの概要について理解する
 date: 2023-03-26
-tags: [network, mpls, ip-vpn, label-switching, network-specialist, ipa, routing]
+tags: [ネットワーク]
 ---
 
 # はじめに

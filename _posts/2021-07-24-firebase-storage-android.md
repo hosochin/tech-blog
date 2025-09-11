@@ -2,7 +2,7 @@
 layout: post
 title: 【Firebase】StorageをAndroidアプリで使ってみた
 date: 2021-07-24
-tags: [firebase, storage, android, authentication, mbaas, google]
+tags: [firebase, Android]
 ---
 
 # はじめに

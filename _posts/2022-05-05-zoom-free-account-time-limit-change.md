@@ -2,7 +2,7 @@
 layout: post
 title: 【Zoom】無料アカウント1対1の時間制限変更
 date: 2022-05-05
-tags: [zoom, tech, remote-work, meeting]
+tags: [zoom]
 ---
 
 # はじめに

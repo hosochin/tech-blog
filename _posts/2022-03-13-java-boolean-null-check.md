@@ -2,7 +2,7 @@
 layout: post
 title: 【Java】Booleanの条件分岐でnull判定も一緒に行う
 date: 2022-03-13
-tags: [java, boolean, null-check, commons-lang, clean-code]
+tags: [Java]
 ---
 
 # はじめに

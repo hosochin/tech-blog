@@ -2,7 +2,7 @@
 layout: post
 title: 【Python】urllibを使ったリクエストでSSL証明書のエラー
 date: 2022-05-03
-tags: [python, urllib, ssl, certificate, error-fix]
+tags: [Python]
 ---
 
 # はじめに

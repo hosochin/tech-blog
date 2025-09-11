@@ -2,7 +2,7 @@
 layout: post
 title: 【読書】プロダクションレディ マイクロサービス
 date: 2020-04-09
-tags: [book-review, microservices, architecture, devops]
+tags: [読書, マイクロサービス, アーキテクチャ, DevOps]
 ---
 
 # はじめに

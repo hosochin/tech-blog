@@ -2,7 +2,7 @@
 layout: post
 title: 【Mac】矢印（←↓↑→）の入力をショートカットぽく入力
 date: 2022-12-14
-tags: [mac, macos, japanese-input, productivity, tips]
+tags: [macos]
 ---
 
 # はじめに

@@ -2,7 +2,7 @@
 layout: post
 title: 【Cloud Firestore】取得したデータをオブジェクトにマッピングする
 date: 2021-10-03
-tags: [cloud-firestore, firebase, nosql, android, java, object-mapping]
+tags: [Cloud Firestore, firebase]
 ---
 
 # はじめに

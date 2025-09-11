@@ -2,7 +2,7 @@
 layout: post
 title: 【ネスペ対策】【RIP/OSPF/BGP】ルーティングプロトコルの全体像について整理する
 date: 2023-03-02
-tags: [network, routing, rip, ospf, bgp, network-specialist, ipa]
+tags: [ネットワーク]
 ---
 
 # はじめに

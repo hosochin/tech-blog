@@ -2,7 +2,7 @@
 layout: post
 title: 【React Native】【Expo】Androidアプリでマップを表示してみる
 date: 2021-01-03
-tags: [react-native, expo, android, google-maps, typescript, mobile-app]
+tags: [React Native, Expo, Android, Google Maps API, TypeScript]
 ---
 
 # はじめに

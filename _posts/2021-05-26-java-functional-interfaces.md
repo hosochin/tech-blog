@@ -2,7 +2,7 @@
 layout: post
 title: 【Java】標準関数型インターフェース
 date: 2021-05-26
-tags: [java, functional-programming, lambda, interface]
+tags: [Java]
 ---
 
 # はじめに

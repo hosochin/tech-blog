@@ -2,7 +2,7 @@
 layout: post
 title: 【JUnit】staticメソッドをMockする
 date: 2022-06-08
-tags: [junit, java, mockito, testing, static-method]
+tags: [Junit, Java, テスト]
 ---
 
 # はじめに

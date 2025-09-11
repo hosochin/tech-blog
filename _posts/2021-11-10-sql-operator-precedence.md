@@ -2,7 +2,7 @@
 layout: post
 title: 【SQL】演算子の優先順位について
 date: 2021-11-10
-tags: [sql, mysql, oracle, spring-data-jpa, database, operator-precedence]
+tags: [SQL, MySQL, Oracle, Spring Data Jpa]
 ---
 
 # はじめに

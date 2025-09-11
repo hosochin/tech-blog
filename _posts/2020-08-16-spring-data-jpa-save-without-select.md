@@ -2,7 +2,7 @@
 layout: post
 title: 【Spring Data JPA】save・saveAllでselectを省略する方法
 date: 2020-08-16
-tags: [spring-boot, jpa, spring-data-jpa, java, database, performance]
+tags: [Spring Boot, JPA, Spring Data JPA, Java]
 ---
 
 # はじめに

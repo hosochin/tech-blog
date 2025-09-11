@@ -2,7 +2,7 @@
 layout: post
 title: 【GitHub】【curl】コード検索の結果をリポジトリ名一覧で取得する
 date: 2022-08-16
-tags: [github, curl, api, search, jq]
+tags: [github, curl]
 ---
 
 # はじめに

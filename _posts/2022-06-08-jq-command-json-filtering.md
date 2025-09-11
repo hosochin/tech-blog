@@ -2,7 +2,7 @@
 layout: post
 title: 【jqコマンド】jsonの要素を絞り込み
 date: 2022-06-08
-tags: [jq, json, linux, bash, command-line]
+tags: [jq, json]
 ---
 
 # はじめに

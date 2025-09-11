@@ -2,7 +2,7 @@
 layout: post
 title: 【GitHub】【参照するコードのラインの位置がずれる】【 コミットハッシュを取得するショートカットキー】
 date: 2023-09-13
-tags: [github, git, shortcut, permalink, commit-hash, code-reference]
+tags: [github, git]
 ---
 
 # はじめに

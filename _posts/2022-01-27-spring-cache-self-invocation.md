@@ -2,7 +2,7 @@
 layout: post
 title: 【SpringCache】同一オブジェクト内のメソッド呼び出しでキャッシュが効かなかった話
 date: 2022-01-27
-tags: [spring-boot, cache, caffeine, proxy, aop, java]
+tags: [Spring Boot, caffeine, Java]
 ---
 
 # はじめに

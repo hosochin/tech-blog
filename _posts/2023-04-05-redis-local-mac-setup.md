@@ -2,7 +2,7 @@
 layout: post
 title: 【Redis】ローカルMacにRedisを入れて動かしてみる
 date: 2023-04-05
-tags: [redis, nosql, mac, homebrew, database, setup]
+tags: [Redis]
 ---
 
 # はじめに

@@ -2,7 +2,7 @@
 layout: post
 title: Web API The Good Partsを読んでみて
 date: 2025-03-06
-tags: [api, rest, web-api, api-design, book-review, best-practices]
+tags: [読書, WEB API]
 ---
 
 # はじめに

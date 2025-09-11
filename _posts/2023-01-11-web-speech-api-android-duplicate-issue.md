@@ -2,7 +2,7 @@
 layout: post
 title: 【Web Speech API（SpeechRecognition）】Androidで音声認識がダブる
 date: 2023-01-11
-tags: [web-speech-api, android, javascript, speech-recognition, browser-api]
+tags: [Web Speech API, Android, JavaScript]
 ---
 
 # はじめに

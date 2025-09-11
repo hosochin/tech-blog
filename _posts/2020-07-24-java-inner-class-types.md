@@ -2,7 +2,7 @@
 layout: post
 title: 【Java】staticの有無など・・・内部クラスの種類を整理
 date: 2020-07-24
-tags: [java, inner-class, static, oop]
+tags: [Java]
 ---
 
 # はじめに

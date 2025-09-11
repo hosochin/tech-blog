@@ -2,7 +2,7 @@
 layout: post
 title: 【SpringBoot】読み込むプロパティファイルごとに処理を変える
 date: 2022-10-09
-tags: [java, spring-boot, conditional-on-property, configuration]
+tags: [Java, Spring Boot]
 ---
 
 # はじめに

@@ -2,7 +2,7 @@
 layout: post
 title: 【GitHub】【Octokit】特定のOrganization下のリポジトリを一括でcloneする
 date: 2022-09-05
-tags: [github, octokit, javascript, nodejs, git, clone]
+tags: [github, octokit, JavaScript, nodeJs, git]
 ---
 
 # はじめに

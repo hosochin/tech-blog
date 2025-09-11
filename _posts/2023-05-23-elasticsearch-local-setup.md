@@ -2,7 +2,7 @@
 layout: post
 title: 【Elasticsearch】ローカル環境でElasticsearchを試してみる
 date: 2023-05-23
-tags: [elasticsearch, search-engine, database, kibana, full-text-search, analytics]
+tags: [Elasticsearch]
 ---
 
 # はじめに

@@ -2,7 +2,7 @@
 layout: post
 title: 【IntelliJ】【SpringBoot】ローカル実行で環境変数を設定, 環境ごとのプロパティファイルを読み込む
 date: 2022-10-09
-tags: [intellij, spring-boot, environment-variables, active-profiles]
+tags: [Intellij, Spring Boot]
 ---
 
 # はじめに

@@ -2,7 +2,7 @@
 layout: post
 title: '【Docker】コンテナに入ろうとしたら "permission denied: unknown"'
 date: 2020-07-24
-tags: [docker, mysql, troubleshooting]
+tags: [Docker, MySQL]
 ---
 
 # はじめに

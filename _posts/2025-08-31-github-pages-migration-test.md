@@ -2,6 +2,7 @@
 layout: post
 title: "GitHub Pagesへの移行テスト"
 date: 2025-08-31
+tags: [github, Jekyll, Ruby]
 ---
 
 # GitHub Pages移行テスト

@@ -2,7 +2,7 @@
 layout: post
 title: 【ネスペ対策】【VPN】VPNの全体像について整理する
 date: 2023-02-17
-tags: [network, vpn, ipsec, ssl-vpn, ip-vpn, network-specialist, ipa]
+tags: [ネットワーク]
 ---
 
 # はじめに

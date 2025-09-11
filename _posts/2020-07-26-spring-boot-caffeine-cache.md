@@ -2,7 +2,7 @@
 layout: post
 title: 【Spring Boot】Caffeineを使ってローカルキャッシュしてみる
 date: 2020-07-26
-tags: [spring-boot, java, caffeine, cache, performance]
+tags: [Spring Boot, Java, Caffeine]
 ---
 
 # はじめに

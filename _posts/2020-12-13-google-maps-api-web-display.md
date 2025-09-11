@@ -2,7 +2,7 @@
 layout: post
 title: 【Google Maps API】webブラウザに地図を表示してみる
 date: 2020-12-13
-tags: [google-maps-api, javascript, web-api, frontend, gcp]
+tags: [Google Maps API, Javascript, GCP]
 ---
 
 # はじめに

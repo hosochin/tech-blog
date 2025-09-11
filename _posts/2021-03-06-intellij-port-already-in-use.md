@@ -2,7 +2,7 @@
 layout: post
 title: 【IntelliJ】Webアプリケーションをlocalhost起動したらポート使用済みで怒られる
 date: 2021-03-06
-tags: [intellij, java, spring-boot, troubleshooting, port]
+tags: [Intellij, Java, Spring Boot]
 ---
 
 # はじめに

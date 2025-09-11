@@ -2,7 +2,7 @@
 layout: post
 title: 【Github】空コミットをpushする
 date: 2022-11-04
-tags: [git, github, empty-commit, version-control]
+tags: [git, github]
 ---
 
 # はじめに

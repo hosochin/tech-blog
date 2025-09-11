@@ -2,7 +2,7 @@
 layout: post
 title: 【Spring Data JPA】N+1問題
 date: 2022-07-03
-tags: [spring-data-jpa, java, n+1-problem, jpa, performance, join-fetch]
+tags: [Spring Data JPA, Java]
 ---
 
 # はじめに

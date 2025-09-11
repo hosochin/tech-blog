@@ -2,7 +2,7 @@
 layout: post
 title: 【読書】ネットワークはなぜつながるのか
 date: 2020-07-20
-tags: [book-review, network, tcp-ip, infrastructure]
+tags: [読書, ネットワーク, TCP/IP]
 ---
 
 # はじめに

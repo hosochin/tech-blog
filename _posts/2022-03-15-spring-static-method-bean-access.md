@@ -2,7 +2,7 @@
 layout: post
 title: 【Spring】staticなメソッドからbeanを参照する
 date: 2022-03-15
-tags: [spring, java, dependency-injection, static-method, bean]
+tags: [Spring, Java]
 ---
 
 # はじめに

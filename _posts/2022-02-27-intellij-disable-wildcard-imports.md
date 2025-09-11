@@ -2,7 +2,7 @@
 layout: post
 title: 【IntelliJ】インポート文をまとめないようにする
 date: 2022-02-27
-tags: [intellij, java, ide, code-style, import]
+tags: [Intellij, Java, IDE]
 ---
 
 # はじめに

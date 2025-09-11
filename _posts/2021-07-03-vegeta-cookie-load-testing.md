@@ -2,7 +2,7 @@
 layout: post
 title: 【負荷テスト】vegetaでcookieをつけてリクエストする方法
 date: 2021-07-03
-tags: [vegeta, load-testing, cookie, golang, spring-boot, java]
+tags: [vegeta, テスト]
 ---
 
 # はじめに

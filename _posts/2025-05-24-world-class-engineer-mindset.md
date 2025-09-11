@@ -2,7 +2,7 @@
 layout: post
 title: 生産性を上げたいなら、定時に帰れ：『世界一流エンジニアの思考法』を読んで得た素敵な言葉
 date: 2025-05-24
-tags: [book-review, productivity, engineering, microsoft, mindset, work-life-balance]
+tags: [読書]
 ---
 
 # はじめに

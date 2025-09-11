@@ -2,7 +2,7 @@
 layout: post
 title: 【Web Speech API（SpeechRecognition）】ブラウザで音声認識機能を実装する
 date: 2023-01-11
-tags: [web-speech-api, javascript, speech-recognition, browser-api, voice-recognition]
+tags: [Web Speech API, JavaScript]
 ---
 
 # はじめに

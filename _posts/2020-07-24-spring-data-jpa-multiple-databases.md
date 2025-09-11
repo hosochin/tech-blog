@@ -2,7 +2,7 @@
 layout: post
 title: 【Spring Data JPA】複数のDBにアクセスする
 date: 2020-07-24
-tags: [spring, spring-data-jpa, mysql, docker, database, java]
+tags: [Spring, Spring Data JPA, MySQL, Docker, Java]
 ---
 
 # はじめに

@@ -2,7 +2,7 @@
 layout: post
 title: 【Python】csvファイルからjson または xmlを生成する
 date: 2023-07-31
-tags: [python, csv, json, xml, data-conversion, file-processing]
+tags: [Python, json]
 ---
 
 # はじめに

@@ -2,7 +2,7 @@
 layout: post
 title: 【React Native】【Expo】SQLiteを使ってみる
 date: 2020-05-10
-tags: [react-native, expo, sqlite, javascript, mobile-app, database]
+tags: [React Native, Expo, SQLite, Javascript]
 ---
 
 # はじめに

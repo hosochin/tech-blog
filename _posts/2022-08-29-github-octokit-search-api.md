@@ -2,7 +2,7 @@
 layout: post
 title: 【GitHub】【Octokit】コード検索の結果をリポジトリ名一覧で取得する
 date: 2022-08-29
-tags: [github, octokit, javascript, nodejs, api, search]
+tags: [github, octokit, JavaScript, nodeJs]
 ---
 
 # はじめに

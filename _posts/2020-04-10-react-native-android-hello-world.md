@@ -2,7 +2,7 @@
 layout: post
 title: 【React Native】AndroidアプリでHello Worldしてみた
 date: 2020-04-10
-tags: [react-native, android, javascript, mobile-app]
+tags: [React Native, Android, JavaScript]
 ---
 
 # はじめに

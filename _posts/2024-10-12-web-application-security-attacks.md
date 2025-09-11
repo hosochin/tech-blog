@@ -2,7 +2,7 @@
 layout: post
 title: 【セキュリティ】【安全なWebアプリケーションの作り方】で登場する主な攻撃手法とその対策をまとめる
 date: 2024-10-12
-tags: [security, web-application, xss, sql-injection, csrf, vulnerability, tokumaru-book]
+tags: [ネットワーク, セキュリティ]
 ---
 
 # はじめに

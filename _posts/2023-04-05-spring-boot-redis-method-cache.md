@@ -2,7 +2,7 @@
 layout: post
 title: 【Spring Boot】【Redis】メソッドをキャッシュする
 date: 2023-04-05
-tags: [spring-boot, redis, cache, java, annotation, ttl]
+tags: [Spring Boot, Redis, Java]
 ---
 
 # はじめに

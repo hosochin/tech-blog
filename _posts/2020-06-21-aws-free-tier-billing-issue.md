@@ -2,7 +2,7 @@
 layout: post
 title: 【AWS】無料枠内だと思ってたら料金発生してた話
 date: 2020-06-21
-tags: [aws, cloud, elastic-ip, billing, ec2]
+tags: [AWS, Elastic IP, EC2]
 ---
 
 # はじめに

@@ -2,7 +2,7 @@
 layout: post
 title: 【Mac】ボイスメモの録音が始まらない
 date: 2023-01-11
-tags: [mac, macos, voice-memo, sound-settings, troubleshooting]
+tags: [macos]
 ---
 
 # はじめに

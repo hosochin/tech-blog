@@ -2,7 +2,7 @@
 layout: post
 title: '【brew】Error: Permission denied @ dir_s_mkdir – /private/tmp/homebrew~ って怒られる'
 date: 2023-08-28
-tags: [homebrew, mac, macos, permission, error, troubleshooting]
+tags: [homebrew, brew, macos]
 ---
 
 # はじめに

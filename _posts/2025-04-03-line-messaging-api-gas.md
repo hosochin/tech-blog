@@ -2,7 +2,7 @@
 layout: post
 title: LINE公式アカウントのMessaging API + GAS でメッセージを通知する
 date: 2025-04-03
-tags: [line, messaging-api, gas, google-apps-script, webhook, notification, bot]
+tags: [LINE, GAS]
 ---
 
 # はじめに

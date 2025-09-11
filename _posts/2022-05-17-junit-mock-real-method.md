@@ -2,7 +2,7 @@
 layout: post
 title: 【Junit】モックで本物のメソッドを呼ぶ方法
 date: 2022-05-17
-tags: [junit, mockito, testing, spy, java]
+tags: [Junit, テスト, Java]
 ---
 
 # はじめに

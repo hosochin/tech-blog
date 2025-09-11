@@ -2,7 +2,7 @@
 layout: post
 title: 【Junit】【Spring】privateなフィールドの値を書き換える
 date: 2022-01-17
-tags: [junit, spring, testing, reflection, mockito, java]
+tags: [Junit, Spring, テスト, Java]
 ---
 
 # はじめに

@@ -2,7 +2,7 @@
 layout: post
 title: 【Java】 アノテーションを自分で定義してみる
 date: 2020-04-06
-tags: [java, annotation, reflection]
+tags: [Java]
 ---
 
 # はじめに

@@ -2,7 +2,7 @@
 layout: post
 title: 【Junit5】ParameterizedTestを使ってみる
 date: 2022-09-16
-tags: [java, junit5, parameterized-test, unit-test]
+tags: [Java, Junit5, テスト]
 ---
 
 # はじめに

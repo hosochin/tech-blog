@@ -2,7 +2,7 @@
 layout: post
 title: 【bash】コマンド出力結果をdiffコマンドで比較
 date: 2021-05-29
-tags: [bash, linux, shell, diff, command-line]
+tags: [bash, linux, shell]
 ---
 
 # はじめに

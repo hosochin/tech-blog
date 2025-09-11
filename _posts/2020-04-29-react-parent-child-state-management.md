@@ -2,7 +2,7 @@
 layout: post
 title: 【React】親コンポーネントのStateを子コンポーネントから更新する方法
 date: 2020-04-29
-tags: [react, javascript, js, java, frontend, state-management]
+tags: [React, Javascript]
 ---
 
 # はじめに

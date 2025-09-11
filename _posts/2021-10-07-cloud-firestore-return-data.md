@@ -2,7 +2,7 @@
 layout: post
 title: 【Cloud Firestore】取得したデータをリターンする
 date: 2021-10-07
-tags: [cloud-firestore, firebase, android, java, async, callback]
+tags: [Cloud Firestore, firebase, Android, Java]
 ---
 
 # はじめに

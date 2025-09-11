@@ -2,7 +2,7 @@
 layout: post
 title: 【Java】streamでListの重複削除
 date: 2022-07-03
-tags: [java, stream, list, duplicate-removal, distinct]
+tags: [Java]
 ---
 
 # はじめに

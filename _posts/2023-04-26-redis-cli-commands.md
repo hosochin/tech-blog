@@ -2,7 +2,7 @@
 layout: post
 title: 【Redis】redis-cliでよく使うコマンド
 date: 2023-04-26
-tags: [redis, cli, command, database, nosql]
+tags: [Redis]
 ---
 
 # はじめに

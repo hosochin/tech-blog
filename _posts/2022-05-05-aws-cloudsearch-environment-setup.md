@@ -2,7 +2,7 @@
 layout: post
 title: 【AWS】CloudSearchで全文検索 環境構築編
 date: 2022-05-05
-tags: [aws, cloudsearch, full-text-search, elasticsearch]
+tags: [AWS, CloudSearch, Elasticsearch]
 ---
 
 # はじめに

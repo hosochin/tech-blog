@@ -2,7 +2,7 @@
 layout: post
 title: '【brew】Error: Unknown command: cask って怒られる'
 date: 2021-04-01
-tags: [brew, mac, macos, homebrew, troubleshooting]
+tags: [brew, macos, homebrew]
 ---
 
 # はじめに

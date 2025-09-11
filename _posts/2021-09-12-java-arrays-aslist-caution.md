@@ -2,7 +2,7 @@
 layout: post
 title: 【Java】Arrays.asListの注意点
 date: 2021-09-12
-tags: [java, arrays, list, collection, exception]
+tags: [Java]
 ---
 
 # はじめに

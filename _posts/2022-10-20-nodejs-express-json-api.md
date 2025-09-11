@@ -2,7 +2,7 @@
 layout: post
 title: 【Node.js】【Express】 jsonを返却するシンプルなREST APIの作成
 date: 2022-10-20
-tags: [nodejs, express, rest-api, json, javascript]
+tags: [nodeJs, Express, json, JavaScript]
 ---
 
 # はじめに

@@ -2,7 +2,7 @@
 layout: post
 title: 【Java】JUnit4からJUnit5へ移行
 date: 2022-08-13
-tags: [java, junit, junit4, junit5, testing, migration]
+tags: [Java, Junit, テスト]
 ---
 
 # はじめに

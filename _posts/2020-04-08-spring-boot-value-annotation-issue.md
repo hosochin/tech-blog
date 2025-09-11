@@ -2,7 +2,7 @@
 layout: post
 title: 【Spring Boot】Valueアノテーションが効かなくて困った話
 date: 2020-04-08
-tags: [java, spring-boot, annotation, troubleshooting]
+tags: [Java, Spring Boot, Spring]
 ---
 
 # はじめに

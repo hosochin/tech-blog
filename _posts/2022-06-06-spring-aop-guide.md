@@ -2,7 +2,7 @@
 layout: post
 title: 【Spring】Spring AOPについて
 date: 2022-06-06
-tags: [spring, aop, java, aspect-oriented-programming]
+tags: [Spring, AOP, Java]
 ---
 
 # はじめに

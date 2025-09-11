@@ -2,7 +2,7 @@
 layout: post
 title: 【React Native】【Expo】Hello Worldしてみた
 date: 2020-04-15
-tags: [react-native, expo, javascript, mobile-app]
+tags: [React Native, Expo, JavaScript]
 ---
 
 # はじめに

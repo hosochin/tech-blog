@@ -2,7 +2,7 @@
 layout: post
 title: 【Java】 Streamのreduceメソッドについて
 date: 2020-04-01
-tags: [java, stream, functional-programming]
+tags: [Java]
 ---
 
 # はじめに

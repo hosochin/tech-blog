@@ -2,7 +2,7 @@
 layout: post
 title: 【AWS】CloudSearchで全文検索 Javaでアクセスする編
 date: 2022-05-05
-tags: [aws, cloudsearch, java, spring-boot, full-text-search, sdk]
+tags: [AWS, CloudSearch, Java, Spring Boot]
 ---
 
 # はじめに

@@ -2,7 +2,7 @@
 layout: post
 title: 【AWS】EC2でHello World してみた
 date: 2020-10-04
-tags: [aws, ec2, apache, cloud, infrastructure]
+tags: [AWS, EC2, Apache]
 ---
 
 # はじめに

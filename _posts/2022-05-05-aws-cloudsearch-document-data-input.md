@@ -2,7 +2,7 @@
 layout: post
 title: 【AWS】CloudSearchで全文検索 ドキュメントデータ入力編
 date: 2022-05-05
-tags: [aws, cloudsearch, json, cli, full-text-search]
+tags: [AWS, CloudSearch, json]
 ---
 
 # はじめに

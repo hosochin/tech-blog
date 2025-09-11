@@ -2,7 +2,7 @@
 layout: post
 title: 【ネスペ対策】【IPsec】ESPでカプセル化したパケット構成について
 date: 2023-03-30
-tags: [network, ipsec, esp, vpn, packet-structure, network-specialist, ipa, security]
+tags: [ネットワーク]
 ---
 
 # はじめに

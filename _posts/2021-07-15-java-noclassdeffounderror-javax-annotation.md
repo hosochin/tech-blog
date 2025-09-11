@@ -2,7 +2,7 @@
 layout: post
 title: "【Java】java.lang.NoClassDefFoundError: javax/annotation/Generated"
 date: 2021-07-15
-tags: [java, android, gradle, annotation, error-fix]
+tags: [Java, Android, Gradle]
 ---
 
 # はじめに

@@ -2,7 +2,7 @@
 layout: post
 title: 【Java】日時の取得と変換について軽くまとめ
 date: 2021-05-28
-tags: [java, date-time, datetime, api, timezone]
+tags: [Java]
 ---
 
 # はじめに

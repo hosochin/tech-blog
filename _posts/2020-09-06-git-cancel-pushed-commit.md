@@ -2,7 +2,7 @@
 layout: post
 title: 【GitHub】間違ってpushしたコミットを取り消す
 date: 2020-09-06
-tags: [git, github, version-control, troubleshooting]
+tags: [git, github]
 ---
 
 # はじめに

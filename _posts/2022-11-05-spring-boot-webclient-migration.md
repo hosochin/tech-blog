@@ -2,7 +2,7 @@
 layout: post
 title: 【SpringBoot】RestTemplateからWebClientに移行
 date: 2022-11-05
-tags: [java, spring-boot, webclient, resttemplate, webflux, migration]
+tags: [Java, Spring Boot]
 ---
 
 # はじめに

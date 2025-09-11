@@ -2,7 +2,7 @@
 layout: post
 title: 【Androidアプリ】外部アプリと連携してファイルを転送する方法
 date: 2020-03-29
-tags: [Android, Java, Kotlin, ファイル操作]
+tags: [Android, Java, Kotlin]
 ---
 
 # はじめに

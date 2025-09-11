@@ -2,7 +2,7 @@
 layout: post
 title: 【Spring Boot】リクエストパラメータに日時を渡す
 date: 2020-08-16
-tags: [spring-boot, java, datetime, web-api]
+tags: [Spring Boot, Java]
 ---
 
 # はじめに
