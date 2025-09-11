@@ -15,7 +15,7 @@ tags: [network, ipsec, esp, vpn, packet-structure, network-specialist, ipa, secu
 ESP（Encapsulating Security Payload）でカプセル化されたパケット構成は以下のようになります  
 緑になっているのがオリジナルパケットに追加される項目になります
 
-<img src="{{ '/assets/images/2023-03-30_1.png' | relative_url }}" alt="ESPパケット構成" width="600">
+<img src="{{ '/assets/images/2023-03-30_1.png' | relative_url }}" alt="ESPパケット構成" class="img-medium">
 
 **パケット構成要素:**
 - **新IPヘッダ** (トンネルモードのみ)

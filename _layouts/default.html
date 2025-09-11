@@ -91,18 +91,29 @@
                 word-break: break-all;
             }
 
-            /* テーブルの横スクロール */
-            table {
-                display: block;
+            /* モバイル用テーブルの改善 */
+            .table-responsive {
+                margin: 15px -15px;
                 overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            table {
+                min-width: 100%;
+                font-size: 0.9em;
+            }
+            
+            table th,
+            table td {
+                padding: 8px 10px;
                 white-space: nowrap;
             }
-
-            /* 画像の最大幅制限 */
-            img {
-                max-width: 100%;
-                height: auto;
+            
+            table th {
+                background: #f0f8ff !important;
+                font-size: 0.85em;
             }
+
         }
 
         h1,
@@ -640,6 +651,92 @@
         .tag-filter-posts .post-item:hover {
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             border-color: #ddd;
+        }
+
+        /* テーブルスタイル（全画面サイズ） */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        table thead {
+            background: #f8f9fa;
+        }
+
+        table th,
+        table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        table th {
+            font-weight: 600;
+            color: #333;
+            background: #f8f9fa;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        table tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* テーブルレスポンシブ対応 */
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 20px 0;
+        }
+
+        .table-responsive table {
+            min-width: 600px;
+            margin: 0;
+        }
+
+        /* 画像レスポンシブ対応 */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin: 15px 0;
+        }
+
+        /* 画像サイズクラス */
+        .img-small {
+            max-width: 300px;
+        }
+
+        .img-medium {
+            max-width: 500px;
+        }
+
+        .img-large {
+            max-width: 700px;
+        }
+
+        .img-full {
+            max-width: 100%;
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .img-small,
+            .img-medium,
+            .img-large {
+                max-width: 100%;
+            }
         }
     </style>
 </head>

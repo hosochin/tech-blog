@@ -29,7 +29,7 @@ tags: [network, mpls, ip-vpn, label-switching, network-specialist, ipa, routing]
 IP-VPNでは、パケット転送技術として **MPLS** が使用されています  
 この場合のルーティングの流れは以下のイメージです
 
-<img src="{{ '/assets/images/2023-03-26_1.png' | relative_url }}" alt="MPLS転送フロー" width="700">
+<img src="{{ '/assets/images/2023-03-26_1.png' | relative_url }}" alt="MPLS転送フロー" class="img-large">
 
 上図からもIP-VPN内では、ラベルを付けたり付け替えたりでリレーしていることが分かりますね  
 試験で問われそうなポイントとしては、 **ラベルを貼るのも剥がすのもLER** であるという点です  

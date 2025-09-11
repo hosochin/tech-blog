@@ -27,7 +27,7 @@ tags: [network, routing, rip, ospf, bgp, network-specialist, ipa]
 
 まずは全体像について僕の理解をメモっときます
 
-<img src="{{ '/assets/images/2023-03-02_1.png' | relative_url }}" alt="Vegeta Logo" width="700">
+<img src="{{ '/assets/images/2023-03-02_1.png' | relative_url }}" alt="ルーティング 全体像" class="img-small">
 
 # ルーティング
 
@@ -124,7 +124,7 @@ LSAにはルーターID, リンク数, コストなどの情報が含まれま�
 | エリア境界ルータ<br>ABR = Area Border Router | ・エリアの境界にあるルータ |
 | AS境界ルータ<br>ASBR = AS Boundary Router | ・ASの境界にあるルータ |
 
-<img src="{{ '/assets/images/2023-03-09_4.png' | relative_url }}" alt="OSPFルータ種別" width="600">
+<img src="{{ '/assets/images/2023-03-09_4.png' | relative_url }}" alt="OSPFルータ種別" class="img-large">
 
 ### 3. 各ルータがLSAを元に経路制御表を作成する
 

@@ -34,13 +34,13 @@ VLANには大きく **「ポートベースVLAN」「タグVLAN」** の2種類�
 **ポートベースVLAN** では、L2スイッチの物理的なポートごとにVLANグループを設定します  
 同じスイッチに接続していても、異なるVLANグループ間ではブロードキャストなどの通信は届きません
 
-<img src="{{ '/assets/images/2023-03-09_1.png' | relative_url }}" alt="ポートベースVLAN構成" width="400">
+<img src="{{ '/assets/images/2023-03-09_1.png' | relative_url }}" alt="ポートベースVLAN構成" class="img-small">
 
 物理ポートとVLANが1対1になっているのでシンプルでわかりやすいですね  
 しかし、ポートベースVLANは、スイッチを跨いでVLANを繋ぎたい場合に問題が発生します  
 それは **VLANの数だけ接続用のポートが必要** になることです
 
-<img src="{{ '/assets/images/2023-03-09_2.png' | relative_url }}" alt="ポートベースVLAN スイッチ跨ぎ" width="700">
+<img src="{{ '/assets/images/2023-03-09_2.png' | relative_url }}" alt="ポートベースVLAN スイッチ跨ぎ" class="img-large">
 
 ↑のイメージ図ではスイッチ1とスイッチ2に跨いでVLANを繋ぐために、VLAN1, VLAN2でそれぞれ接続用ポートが必要になっています  
 **VLANの数が増えれば、その分だけ接続用のポートを消費** することとなり、PCなどの端末に使えるポートが少なくなってしまいます  
@@ -51,7 +51,7 @@ VLANには大きく **「ポートベースVLAN」「タグVLAN」** の2種類�
 **タグVLAN** は、通信パケット中にVLANタグを埋め込むことでVLANグループの設定が可能です  
 VLANタグを埋め込んだフレームの構成は以下のようになります
 
-<img src="{{ '/assets/images/2023-03-09_3.png' | relative_url }}" alt="タグVLANフレーム構成" width="600">
+<img src="{{ '/assets/images/2023-03-09_3.png' | relative_url }}" alt="タグVLANフレーム構成" class="img-medium">
 
 送信元MACアドレスとタイプの間に挿入されているのがVLANタグですね  
 VLANタグの中身の概要は以下です
@@ -70,7 +70,7 @@ VLANタグの中身の概要は以下です
 また、タグVLANは1つのポートを複数のVLANで使用できるため、ポートベースVLANの **「VLANの数が増えれば、その分だけ接続用のポートが必要になる」** といった問題が発生しません  
 先ほどのポートベースVLANのスイッチ跨ぎの構成を、タグVLANにした場合以下のようになります
 
-<img src="{{ '/assets/images/2023-03-09_4.png' | relative_url }}" alt="タグVLAN スイッチ跨ぎ" width="600">
+<img src="{{ '/assets/images/2023-03-09_4.png' | relative_url }}" alt="タグVLAN スイッチ跨ぎ" class="img-medium">
 
 VLANの数が増えていっても、スイッチ1とスイッチ2の接続用ポートは1つのままとなります
 

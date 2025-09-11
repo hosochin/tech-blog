@@ -28,7 +28,7 @@ PC1からPC2に通信したいとします
 PC1は送信先のIPアドレスが分かっていますが、イーサネットフレームを送信するにはMACアドレスが必要になります  
 そこでPC1はARP要求を行い、PC2のMACアドレスを調べます
 
-<img src="{{ '/assets/images/2023-04-02_1.png' | relative_url }}" alt="ARP動作イメージ" width="600">
+<img src="{{ '/assets/images/2023-04-02_1.png' | relative_url }}" alt="ARP動作イメージ" class="img-medium">
 
 **ARP動作フロー:**
 1. PC1がARP要求をブロードキャスト送信
@@ -54,7 +54,7 @@ PCの入れ替えなどで、古い情報がいつまでも残っていると、
 
 **GARP = Gratuitous ARP** はARPの1種で、自分自身のIPアドレスに対するARPのことです
 
-<img src="{{ '/assets/images/2023-04-02_2.png' | relative_url }}" alt="GARP動作イメージ" width="600">
+<img src="{{ '/assets/images/2023-04-02_2.png' | relative_url }}" alt="GARP動作イメージ" class="img-medium">
 
 GARPの役割は主に2つあります
 
