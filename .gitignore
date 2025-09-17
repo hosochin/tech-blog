@@ -24,3 +24,5 @@ _site/
 
 original_contents/*
 .claude/*
+
+draft/*
