@@ -31,6 +31,24 @@ title: ツール
         <p>セキュアなパスワードを生成するツールです。</p>
         <a href="{{ '/tools/password-generator/' | relative_url }}" class="tool-link">使ってみる</a>
     </div>
+
+    <div class="tool-card">
+        <h3>JSON フォーマッター</h3>
+        <p>JSONを整形し、ブロックの折りたたみ表示ができるツールです。</p>
+        <a href="{{ '/tools/json-formatter/' | relative_url }}" class="tool-link">使ってみる</a>
+    </div>
+
+    <div class="tool-card">
+        <h3>タイムスタンプ変換</h3>
+        <p>Unix時間と日時を相互変換するツールです。</p>
+        <a href="{{ '/tools/timestamp-converter/' | relative_url }}" class="tool-link">使ってみる</a>
+    </div>
+
+    <div class="tool-card">
+        <h3>和暦変換</h3>
+        <p>西暦と和暦（明治・大正・昭和・平成・令和）を相互変換するツールです。</p>
+        <a href="{{ '/tools/japanese-era-converter/' | relative_url }}" class="tool-link">使ってみる</a>
+    </div>
 </div>
 
 <style>

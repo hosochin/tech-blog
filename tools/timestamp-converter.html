@@ -1,0 +1,451 @@
+---
+layout: default
+title: タイムスタンプ変換
+---
+
+<h1>タイムスタンプ変換ツール</h1>
+
+<div class="tool-container">
+    <div class="converter-section">
+        <h3>Unix時間 → 日時</h3>
+        <div class="input-group">
+            <label for="timestamp-input">Unix時間:</label>
+            <input type="text" id="timestamp-input" placeholder="1640995200 または 1640995200000" />
+            <div class="button-group">
+                <button onclick="convertFromTimestamp()" class="action-btn convert-btn">変換</button>
+                <button onclick="setCurrentTimestamp()" class="action-btn current-btn">現在時刻</button>
+            </div>
+        </div>
+        <div class="output-group" id="timestamp-output" style="display: none;">
+            <div class="output-item">
+                <label>ISO 8601:</label>
+                <div class="output-value" id="iso-output"></div>
+            </div>
+            <div class="output-item">
+                <label>日本時間:</label>
+                <div class="output-value" id="japan-output"></div>
+            </div>
+            <div class="output-item">
+                <label>UTC時間:</label>
+                <div class="output-value" id="utc-output"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="converter-section">
+        <h3>日時 → Unix時間</h3>
+        <div class="input-group">
+            <label for="datetime-input">日時:</label>
+            <input type="datetime-local" id="datetime-input" />
+            <div class="button-group">
+                <button onclick="convertToTimestamp()" class="action-btn convert-btn">変換</button>
+                <button onclick="setCurrentDatetime()" class="action-btn current-btn">現在時刻</button>
+            </div>
+        </div>
+        <div class="output-group" id="datetime-output" style="display: none;">
+            <div class="output-item">
+                <label>Unix時間（秒）:</label>
+                <div class="output-value" id="seconds-output"></div>
+                <button onclick="copyToClipboard('seconds-output')" class="copy-btn">コピー</button>
+            </div>
+            <div class="output-item">
+                <label>Unix時間（ミリ秒）:</label>
+                <div class="output-value" id="milliseconds-output"></div>
+                <button onclick="copyToClipboard('milliseconds-output')" class="copy-btn">コピー</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="error-section" id="error-section" style="display: none;">
+        <p class="error-message" id="error-message"></p>
+    </div>
+
+    <div class="info-section">
+        <h3>タイムスタンプ変換とは？</h3>
+        <p>Unix時間（タイムスタンプ）と人間が読める日時形式を相互変換するツールです。</p>
+
+        <h4>Unix時間について:</h4>
+        <ul>
+            <li><strong>秒単位:</strong> 1970年1月1日 00:00:00 UTCからの経過秒数</li>
+            <li><strong>ミリ秒単位:</strong> 同上だがミリ秒まで含む（JavaScriptなど）</li>
+            <li><strong>例:</strong> 1640995200 = 2022年1月1日 00:00:00 UTC</li>
+        </ul>
+
+        <h4>よくある用途:</h4>
+        <ul>
+            <li>APIレスポンスのタイムスタンプ解読</li>
+            <li>ログファイルの時刻確認</li>
+            <li>データベースの日時フィールド変換</li>
+            <li>プログラムのデバッグ</li>
+        </ul>
+
+        <h4>対応形式:</h4>
+        <ul>
+            <li>Unix時間（秒・ミリ秒の自動判別）</li>
+            <li>ISO 8601形式（YYYY-MM-DDTHH:mm:ss.sssZ）</li>
+            <li>日本時間（JST, UTC+9）</li>
+            <li>UTC時間</li>
+        </ul>
+    </div>
+</div>
+
+<style>
+.tool-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.converter-section {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.converter-section h3 {
+    margin: 0 0 15px 0;
+    color: #0066cc;
+    font-size: 1.2em;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+#timestamp-input, #datetime-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    transition: border-color 0.2s ease;
+    margin-bottom: 10px;
+}
+
+#timestamp-input:focus, #datetime-input:focus {
+    outline: none;
+    border-color: #0066cc;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.convert-btn {
+    background: #0066cc;
+    color: white;
+}
+
+.convert-btn:hover {
+    background: #0052a3;
+}
+
+.current-btn {
+    background: #28a745;
+    color: white;
+}
+
+.current-btn:hover {
+    background: #218838;
+}
+
+.output-group {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #dee2e6;
+}
+
+.output-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.output-item label {
+    min-width: 120px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.output-value {
+    flex: 1;
+    padding: 8px 12px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-size: 14px;
+    color: #0066cc;
+}
+
+.copy-btn {
+    padding: 6px 12px;
+    background: #ffc107;
+    color: #212529;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.copy-btn:hover {
+    background: #e0a800;
+}
+
+.error-section {
+    margin: 20px 0;
+}
+
+.error-message {
+    color: #dc3545;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    padding: 12px;
+    margin: 0;
+}
+
+.info-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.info-section h3 {
+    margin: 0 0 10px 0;
+    color: #0066cc;
+}
+
+.info-section h4 {
+    margin: 20px 0 10px 0;
+    color: #333;
+}
+
+.info-section ul {
+    padding-left: 20px;
+}
+
+@media (max-width: 600px) {
+    .output-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+    }
+
+    .output-item label {
+        min-width: auto;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .action-btn {
+        width: 100%;
+    }
+}
+</style>
+
+<script>
+function showError(message) {
+    const errorSection = document.getElementById('error-section');
+    const errorMessage = document.getElementById('error-message');
+
+    errorMessage.textContent = message;
+    errorSection.style.display = 'block';
+
+    setTimeout(() => {
+        errorSection.style.display = 'none';
+    }, 5000);
+}
+
+function hideError() {
+    const errorSection = document.getElementById('error-section');
+    errorSection.style.display = 'none';
+}
+
+function convertFromTimestamp() {
+    const input = document.getElementById('timestamp-input').value.trim();
+    const outputSection = document.getElementById('timestamp-output');
+
+    hideError();
+
+    if (!input) {
+        showError('Unix時間を入力してください');
+        return;
+    }
+
+    const timestamp = parseFloat(input);
+    if (isNaN(timestamp)) {
+        showError('数値を入力してください');
+        return;
+    }
+
+    try {
+        // 秒とミリ秒を自動判別（桁数で判断）
+        let date;
+        if (timestamp.toString().length <= 10) {
+            // 秒単位
+            date = new Date(timestamp * 1000);
+        } else {
+            // ミリ秒単位
+            date = new Date(timestamp);
+        }
+
+        if (isNaN(date.getTime())) {
+            showError('無効なタイムスタンプです');
+            return;
+        }
+
+        // ISO 8601形式
+        document.getElementById('iso-output').textContent = date.toISOString();
+
+        // 日本時間
+        const japanTime = new Intl.DateTimeFormat('ja-JP', {
+            timeZone: 'Asia/Tokyo',
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            timeZoneName: 'short'
+        }).format(date);
+        document.getElementById('japan-output').textContent = japanTime;
+
+        // UTC時間
+        const utcTime = new Intl.DateTimeFormat('en-GB', {
+            timeZone: 'UTC',
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            timeZoneName: 'short'
+        }).format(date);
+        document.getElementById('utc-output').textContent = utcTime;
+
+        outputSection.style.display = 'block';
+    } catch (error) {
+        showError('変換に失敗しました: ' + error.message);
+    }
+}
+
+function setCurrentTimestamp() {
+    const now = Math.floor(Date.now() / 1000);
+    document.getElementById('timestamp-input').value = now;
+    convertFromTimestamp();
+}
+
+function convertToTimestamp() {
+    const input = document.getElementById('datetime-input').value;
+    const outputSection = document.getElementById('datetime-output');
+
+    hideError();
+
+    if (!input) {
+        showError('日時を選択してください');
+        return;
+    }
+
+    try {
+        const date = new Date(input);
+
+        if (isNaN(date.getTime())) {
+            showError('無効な日時です');
+            return;
+        }
+
+        const seconds = Math.floor(date.getTime() / 1000);
+        const milliseconds = date.getTime();
+
+        document.getElementById('seconds-output').textContent = seconds;
+        document.getElementById('milliseconds-output').textContent = milliseconds;
+
+        outputSection.style.display = 'block';
+    } catch (error) {
+        showError('変換に失敗しました: ' + error.message);
+    }
+}
+
+function setCurrentDatetime() {
+    const now = new Date();
+    // ローカル時間でdatetime-localに設定
+    const localISOTime = new Date(now.getTime() - (now.getTimezoneOffset() * 60000)).toISOString().slice(0, 16);
+    document.getElementById('datetime-input').value = localISOTime;
+    convertToTimestamp();
+}
+
+function copyToClipboard(elementId) {
+    const element = document.getElementById(elementId);
+    const text = element.textContent;
+
+    try {
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = element.nextElementSibling;
+            const originalText = btn.textContent;
+            btn.textContent = 'コピー完了!';
+            btn.style.background = '#28a745';
+
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '#ffc107';
+            }, 2000);
+        }).catch(() => {
+            // フォールバック
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            const btn = element.nextElementSibling;
+            const originalText = btn.textContent;
+            btn.textContent = 'コピー完了!';
+            btn.style.background = '#28a745';
+
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '#ffc107';
+            }, 2000);
+        });
+    } catch (error) {
+        showError('コピーに失敗しました');
+    }
+}
+
+// ページ読み込み時の初期化
+document.addEventListener('DOMContentLoaded', function() {
+    // 現在時刻を初期表示
+    setCurrentTimestamp();
+    setCurrentDatetime();
+});
+</script>

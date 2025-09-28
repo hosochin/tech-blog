@@ -1,0 +1,510 @@
+---
+layout: default
+title: 和暦変換
+---
+
+<h1>和暦・西暦変換ツール</h1>
+
+<div class="tool-container">
+    <div class="converter-section">
+        <h3>西暦 → 和暦</h3>
+        <div class="input-group">
+            <label for="western-date">西暦年月日:</label>
+            <input type="date" id="western-date" />
+            <button onclick="convertToJapanese()" class="action-btn convert-btn">和暦に変換</button>
+            <button onclick="setToday('western')" class="action-btn today-btn">今日</button>
+        </div>
+        <div class="output-group" id="japanese-output" style="display: none;">
+            <div class="output-item">
+                <label>和暦:</label>
+                <div class="output-value" id="japanese-result"></div>
+            </div>
+            <div class="output-item">
+                <label>元号期間:</label>
+                <div class="output-value" id="era-period"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="converter-section">
+        <h3>和暦 → 西暦</h3>
+        <div class="input-group">
+            <label for="era-select">元号:</label>
+            <select id="era-select">
+                <option value="令和">令和</option>
+                <option value="平成">平成</option>
+                <option value="昭和">昭和</option>
+                <option value="大正">大正</option>
+                <option value="明治">明治</option>
+            </select>
+
+            <label for="era-year">年:</label>
+            <input type="number" id="era-year" min="1" max="100" placeholder="1" />
+
+            <label for="era-month">月:</label>
+            <input type="number" id="era-month" min="1" max="12" value="1" />
+
+            <label for="era-day">日:</label>
+            <input type="number" id="era-day" min="1" max="31" value="1" />
+
+            <button onclick="convertToWestern()" class="action-btn convert-btn">西暦に変換</button>
+        </div>
+        <div class="output-group" id="western-output" style="display: none;">
+            <div class="output-item">
+                <label>西暦:</label>
+                <div class="output-value" id="western-result"></div>
+            </div>
+            <div class="output-item">
+                <label>年齢計算:</label>
+                <div class="output-value" id="age-result"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="error-section" id="error-section" style="display: none;">
+        <p class="error-message" id="error-message"></p>
+    </div>
+
+    <div class="era-reference">
+        <h3>元号一覧</h3>
+        <div class="era-grid">
+            <div class="era-card">
+                <h4>令和</h4>
+                <p>2019年5月1日〜現在</p>
+                <small>平成31年4月30日まで平成</small>
+            </div>
+            <div class="era-card">
+                <h4>平成</h4>
+                <p>1989年1月8日〜2019年4月30日</p>
+                <small>31年間</small>
+            </div>
+            <div class="era-card">
+                <h4>昭和</h4>
+                <p>1926年12月25日〜1989年1月7日</p>
+                <small>64年間（昭和64年は1月7日まで）</small>
+            </div>
+            <div class="era-card">
+                <h4>大正</h4>
+                <p>1912年7月30日〜1926年12月25日</p>
+                <small>15年間</small>
+            </div>
+            <div class="era-card">
+                <h4>明治</h4>
+                <p>1868年1月25日〜1912年7月30日</p>
+                <small>45年間</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <h3>和暦変換について</h3>
+        <p>日本の元号（年号）と西暦を相互変換するツールです。公文書や履歴書作成時に便利です。</p>
+
+        <h4>注意事項:</h4>
+        <ul>
+            <li>元号の切り替え日付は正確な年月日で判定</li>
+            <li>明治5年以前の旧暦は対応していません</li>
+            <li>元号の最終年は短い場合があります（昭和64年は1月7日まで）</li>
+        </ul>
+
+        <h4>よくある用途:</h4>
+        <ul>
+            <li>履歴書・職歴書の作成</li>
+            <li>公的文書の年月日記入</li>
+            <li>年齢計算</li>
+            <li>歴史的事件の年代確認</li>
+        </ul>
+    </div>
+</div>
+
+<style>
+.tool-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.converter-section {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.converter-section h3 {
+    margin: 0 0 15px 0;
+    color: #0066cc;
+    font-size: 1.2em;
+}
+
+.input-group {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+}
+
+#western-date, #era-select, #era-year, #era-month, #era-day {
+    padding: 8px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+}
+
+#western-date:focus, #era-select:focus, #era-year:focus, #era-month:focus, #era-day:focus {
+    outline: none;
+    border-color: #0066cc;
+}
+
+.action-btn {
+    grid-column: 1 / -1;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    justify-self: start;
+    margin: 5px;
+}
+
+.convert-btn {
+    background: #0066cc;
+    color: white;
+}
+
+.convert-btn:hover {
+    background: #0052a3;
+}
+
+.today-btn {
+    background: #28a745;
+    color: white;
+}
+
+.today-btn:hover {
+    background: #218838;
+}
+
+.output-group {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #dee2e6;
+}
+
+.output-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.output-item label {
+    min-width: 100px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.output-value {
+    flex: 1;
+    padding: 10px 15px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #0066cc;
+    font-size: 16px;
+}
+
+.error-section {
+    margin: 20px 0;
+}
+
+.error-message {
+    color: #dc3545;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    padding: 12px;
+    margin: 0;
+}
+
+.era-reference {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 30px 0;
+}
+
+.era-reference h3 {
+    margin: 0 0 15px 0;
+    color: #0066cc;
+}
+
+.era-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.era-card {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 15px;
+    text-align: center;
+}
+
+.era-card h4 {
+    margin: 0 0 8px 0;
+    color: #0066cc;
+    font-size: 1.1em;
+}
+
+.era-card p {
+    margin: 0 0 5px 0;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9em;
+}
+
+.era-card small {
+    color: #666;
+    font-size: 0.8em;
+}
+
+.info-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.info-section h3 {
+    margin: 0 0 10px 0;
+    color: #0066cc;
+}
+
+.info-section h4 {
+    margin: 20px 0 10px 0;
+    color: #333;
+}
+
+.info-section ul {
+    padding-left: 20px;
+}
+
+@media (max-width: 600px) {
+    .input-group {
+        grid-template-columns: 1fr;
+    }
+
+    .output-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+    }
+
+    .output-item label {
+        min-width: auto;
+    }
+
+    .era-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script>
+// 元号データ（開始日・終了日）
+const eras = {
+    '令和': { start: '2019-05-01', end: null, startYear: 2019 },
+    '平成': { start: '1989-01-08', end: '2019-04-30', startYear: 1989 },
+    '昭和': { start: '1926-12-25', end: '1989-01-07', startYear: 1926 },
+    '大正': { start: '1912-07-30', end: '1926-12-25', startYear: 1912 },
+    '明治': { start: '1868-01-25', end: '1912-07-30', startYear: 1868 }
+};
+
+function showError(message) {
+    const errorSection = document.getElementById('error-section');
+    const errorMessage = document.getElementById('error-message');
+
+    errorMessage.textContent = message;
+    errorSection.style.display = 'block';
+
+    setTimeout(() => {
+        errorSection.style.display = 'none';
+    }, 5000);
+}
+
+function hideError() {
+    const errorSection = document.getElementById('error-section');
+    errorSection.style.display = 'none';
+}
+
+function getEraFromDate(dateStr) {
+    const targetDate = new Date(dateStr);
+
+    for (const [eraName, eraData] of Object.entries(eras)) {
+        const startDate = new Date(eraData.start);
+        const endDate = eraData.end ? new Date(eraData.end) : new Date();
+
+        if (targetDate >= startDate && targetDate <= endDate) {
+            return {
+                name: eraName,
+                year: targetDate.getFullYear() - eraData.startYear + 1,
+                data: eraData
+            };
+        }
+    }
+
+    return null;
+}
+
+function convertToJapanese() {
+    const dateInput = document.getElementById('western-date').value;
+    const outputSection = document.getElementById('japanese-output');
+
+    hideError();
+
+    if (!dateInput) {
+        showError('西暦年月日を選択してください');
+        return;
+    }
+
+    try {
+        const era = getEraFromDate(dateInput);
+
+        if (!era) {
+            showError('対応していない年代です（明治元年以降を入力してください）');
+            return;
+        }
+
+        const inputDate = new Date(dateInput);
+        const month = inputDate.getMonth() + 1;
+        const day = inputDate.getDate();
+
+        const japaneseDate = `${era.name}${era.year}年${month}月${day}日`;
+        document.getElementById('japanese-result').textContent = japaneseDate;
+
+        // 元号期間の表示
+        const startDate = new Date(era.data.start);
+        const endDate = era.data.end ? new Date(era.data.end) : null;
+        const startStr = `${startDate.getFullYear()}年${startDate.getMonth() + 1}月${startDate.getDate()}日`;
+        const endStr = endDate ? `${endDate.getFullYear()}年${endDate.getMonth() + 1}月${endDate.getDate()}日` : '現在';
+
+        document.getElementById('era-period').textContent = `${startStr} 〜 ${endStr}`;
+
+        outputSection.style.display = 'block';
+    } catch (error) {
+        showError('変換に失敗しました: ' + error.message);
+    }
+}
+
+function convertToWestern() {
+    const eraName = document.getElementById('era-select').value;
+    const eraYear = parseInt(document.getElementById('era-year').value);
+    const eraMonth = parseInt(document.getElementById('era-month').value);
+    const eraDay = parseInt(document.getElementById('era-day').value);
+    const outputSection = document.getElementById('western-output');
+
+    hideError();
+
+    if (!eraYear || !eraMonth || !eraDay) {
+        showError('年月日をすべて入力してください');
+        return;
+    }
+
+    if (eraYear < 1 || eraYear > 100) {
+        showError('年は1〜100の範囲で入力してください');
+        return;
+    }
+
+    if (eraMonth < 1 || eraMonth > 12) {
+        showError('月は1〜12の範囲で入力してください');
+        return;
+    }
+
+    if (eraDay < 1 || eraDay > 31) {
+        showError('日は1〜31の範囲で入力してください');
+        return;
+    }
+
+    try {
+        const eraData = eras[eraName];
+        const westernYear = eraData.startYear + eraYear - 1;
+        const targetDate = new Date(westernYear, eraMonth - 1, eraDay);
+
+        // 日付の妥当性チェック
+        if (targetDate.getMonth() !== eraMonth - 1) {
+            showError('存在しない日付です');
+            return;
+        }
+
+        // 元号期間内かチェック
+        const startDate = new Date(eraData.start);
+        const endDate = eraData.end ? new Date(eraData.end) : new Date();
+
+        if (targetDate < startDate || targetDate > endDate) {
+            showError(`${eraName}${eraYear}年は存在しません`);
+            return;
+        }
+
+        const westernDate = `${westernYear}年${eraMonth}月${eraDay}日`;
+        document.getElementById('western-result').textContent = westernDate;
+
+        // 現在の年齢計算
+        const today = new Date();
+        let age = today.getFullYear() - westernYear;
+        if (today.getMonth() < eraMonth - 1 ||
+            (today.getMonth() === eraMonth - 1 && today.getDate() < eraDay)) {
+            age--;
+        }
+
+        if (age >= 0) {
+            document.getElementById('age-result').textContent = `${age}歳（今年の誕生日を迎えている場合）`;
+        } else {
+            document.getElementById('age-result').textContent = '未来の日付です';
+        }
+
+        outputSection.style.display = 'block';
+    } catch (error) {
+        showError('変換に失敗しました: ' + error.message);
+    }
+}
+
+function setToday(type) {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+
+    if (type === 'western') {
+        document.getElementById('western-date').value = `${year}-${month}-${day}`;
+        convertToJapanese();
+    }
+}
+
+// ページ読み込み時の初期化
+document.addEventListener('DOMContentLoaded', function() {
+    // 今日の日付を設定
+    setToday('western');
+
+    // 令和の現在年を設定
+    const today = new Date();
+    const currentReiwaYear = today.getFullYear() - 2019 + 1;
+    document.getElementById('era-year').value = currentReiwaYear;
+    document.getElementById('era-month').value = today.getMonth() + 1;
+    document.getElementById('era-day').value = today.getDate();
+});
+</script>

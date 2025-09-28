@@ -1,0 +1,520 @@
+---
+layout: default
+title: JSON フォーマッター
+---
+
+<h1>JSON フォーマッター</h1>
+
+<div class="tool-container">
+    <div class="input-section">
+        <label for="json-input">JSON を入力:</label>
+        <textarea id="json-input" placeholder="JSONデータを貼り付けてください..." rows="10"></textarea>
+        <small class="input-hint">整形したいJSONデータを入力してください</small>
+    </div>
+
+    <div class="button-section">
+        <button onclick="formatJSON()" class="action-btn format-btn">整形</button>
+        <button onclick="expandAll()" class="action-btn expand-btn">すべて展開</button>
+        <button onclick="collapseAll()" class="action-btn collapse-btn">すべて折りたたみ</button>
+        <button onclick="copyFormatted()" class="action-btn copy-btn">コピー</button>
+        <button onclick="clearAll()" class="action-btn clear-btn">クリア</button>
+    </div>
+
+    <div class="error-section" id="error-section" style="display: none;">
+        <p class="error-message" id="error-message"></p>
+    </div>
+
+    <div class="output-section" id="output-section" style="display: none;">
+        <label>整形済み JSON:</label>
+        <div class="json-display" id="json-display"></div>
+    </div>
+
+    <div class="info-section">
+        <h3>JSON フォーマッターとは？</h3>
+        <p>JSONデータを見やすく整形し、オブジェクトや配列のブロックを折りたたんだり展開したりできるツールです。</p>
+
+        <h4>使い方:</h4>
+        <ul>
+            <li>JSONデータを上のテキストエリアに貼り付け</li>
+            <li>「整形」ボタンで見やすく表示</li>
+            <li>オブジェクトや配列の左の<span class="collapse-icon">▼</span>をクリックして折りたたみ</li>
+            <li>「コピー」ボタンで整形済みJSONをクリップボードにコピー</li>
+        </ul>
+
+        <h4>特徴:</h4>
+        <ul>
+            <li>シンタックスハイライト（色分け表示）</li>
+            <li>インタラクティブな折りたたみ機能</li>
+            <li>エラー検証機能</li>
+            <li>大きなJSONファイルでも快適に閲覧</li>
+        </ul>
+    </div>
+</div>
+
+<style>
+.tool-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.input-section {
+    margin-bottom: 20px;
+}
+
+.input-section label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+#json-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-size: 14px;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+}
+
+#json-input:focus {
+    outline: none;
+    border-color: #0066cc;
+}
+
+.input-hint {
+    display: block;
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.button-section {
+    text-align: center;
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.action-btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 100px;
+}
+
+.format-btn {
+    background: #0066cc;
+    color: white;
+}
+
+.format-btn:hover {
+    background: #0052a3;
+}
+
+.expand-btn {
+    background: #28a745;
+    color: white;
+}
+
+.expand-btn:hover {
+    background: #218838;
+}
+
+.collapse-btn {
+    background: #ffc107;
+    color: #212529;
+}
+
+.collapse-btn:hover {
+    background: #e0a800;
+}
+
+.copy-btn {
+    background: #17a2b8;
+    color: white;
+}
+
+.copy-btn:hover {
+    background: #138496;
+}
+
+.clear-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.clear-btn:hover {
+    background: #545b62;
+}
+
+.error-section {
+    margin: 20px 0;
+}
+
+.error-message {
+    color: #dc3545;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    padding: 12px;
+    margin: 0;
+    font-family: monospace;
+}
+
+.output-section {
+    margin: 30px 0;
+}
+
+.output-section label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.json-display {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    max-height: 600px;
+    overflow: auto;
+    white-space: pre;
+}
+
+.json-key {
+    color: #0066cc;
+    font-weight: 600;
+}
+
+.json-string {
+    color: #d63384;
+}
+
+.json-number {
+    color: #6f42c1;
+}
+
+.json-boolean {
+    color: #fd7e14;
+    font-weight: 600;
+}
+
+.json-null {
+    color: #6c757d;
+    font-weight: 600;
+}
+
+.json-brace {
+    color: #495057;
+    font-weight: 600;
+}
+
+.json-line {
+    display: block;
+    margin: 2px 0;
+}
+
+.json-collapsible {
+    cursor: pointer;
+    user-select: none;
+}
+
+.json-collapsible:hover {
+    background: rgba(0, 102, 204, 0.1);
+    border-radius: 3px;
+}
+
+.collapse-icon {
+    display: inline-block;
+    width: 12px;
+    color: #666;
+    margin-right: 5px;
+    font-size: 12px;
+    transition: transform 0.2s ease;
+}
+
+.collapse-icon.collapsed {
+    transform: rotate(-90deg);
+}
+
+.json-collapsed {
+    display: none;
+}
+
+.info-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.info-section h3 {
+    margin: 0 0 10px 0;
+    color: #0066cc;
+}
+
+.info-section h4 {
+    margin: 20px 0 10px 0;
+    color: #333;
+}
+
+.info-section ul {
+    padding-left: 20px;
+}
+
+.info-section .collapse-icon {
+    background: #e9ecef;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+@media (max-width: 768px) {
+    .button-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+</style>
+
+<script>
+let formattedJsonData = '';
+
+function showError(message) {
+    const errorSection = document.getElementById('error-section');
+    const errorMessage = document.getElementById('error-message');
+    const outputSection = document.getElementById('output-section');
+
+    errorMessage.textContent = message;
+    errorSection.style.display = 'block';
+    outputSection.style.display = 'none';
+}
+
+function hideError() {
+    const errorSection = document.getElementById('error-section');
+    errorSection.style.display = 'none';
+}
+
+function formatJSON() {
+    const input = document.getElementById('json-input').value.trim();
+    const outputSection = document.getElementById('output-section');
+    const jsonDisplay = document.getElementById('json-display');
+
+    hideError();
+
+    if (!input) {
+        showError('JSONデータを入力してください');
+        return;
+    }
+
+    try {
+        const parsed = JSON.parse(input);
+        formattedJsonData = JSON.stringify(parsed, null, 2);
+
+        const htmlOutput = jsonToHtml(parsed, 0);
+        jsonDisplay.innerHTML = htmlOutput;
+
+        outputSection.style.display = 'block';
+        outputSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (error) {
+        showError('JSON形式が正しくありません: ' + error.message);
+    }
+}
+
+function jsonToHtml(obj, level) {
+    const indent = '  '.repeat(level);
+    const nextIndent = '  '.repeat(level + 1);
+
+    if (obj === null) {
+        return `<span class="json-null">null</span>`;
+    }
+
+    if (typeof obj === 'string') {
+        return `<span class="json-string">"${escapeHtml(obj)}"</span>`;
+    }
+
+    if (typeof obj === 'number') {
+        return `<span class="json-number">${obj}</span>`;
+    }
+
+    if (typeof obj === 'boolean') {
+        return `<span class="json-boolean">${obj}</span>`;
+    }
+
+    if (Array.isArray(obj)) {
+        if (obj.length === 0) {
+            return `<span class="json-brace">[]</span>`;
+        }
+
+        const id = 'collapse_' + Math.random().toString(36).substr(2, 9);
+        let html = `<span class="json-collapsible" onclick="toggleCollapse('${id}')">`;
+        html += `<span class="collapse-icon" id="icon_${id}">▼</span>`;
+        html += `<span class="json-brace">[</span></span>\n`;
+
+        html += `<div id="${id}" class="json-content">`;
+        obj.forEach((item, index) => {
+            html += `<span class="json-line">${nextIndent}${jsonToHtml(item, level + 1)}`;
+            if (index < obj.length - 1) {
+                html += ',';
+            }
+            html += `</span>\n`;
+        });
+        html += `</div>`;
+        html += `<span class="json-line">${indent}<span class="json-brace">]</span></span>`;
+
+        return html;
+    }
+
+    if (typeof obj === 'object') {
+        const keys = Object.keys(obj);
+        if (keys.length === 0) {
+            return `<span class="json-brace">{}</span>`;
+        }
+
+        const id = 'collapse_' + Math.random().toString(36).substr(2, 9);
+        let html = `<span class="json-collapsible" onclick="toggleCollapse('${id}')">`;
+        html += `<span class="collapse-icon" id="icon_${id}">▼</span>`;
+        html += `<span class="json-brace">{</span></span>\n`;
+
+        html += `<div id="${id}" class="json-content">`;
+        keys.forEach((key, index) => {
+            html += `<span class="json-line">${nextIndent}<span class="json-key">"${escapeHtml(key)}"</span>: ${jsonToHtml(obj[key], level + 1)}`;
+            if (index < keys.length - 1) {
+                html += ',';
+            }
+            html += `</span>\n`;
+        });
+        html += `</div>`;
+        html += `<span class="json-line">${indent}<span class="json-brace">}</span></span>`;
+
+        return html;
+    }
+
+    return String(obj);
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+function toggleCollapse(id) {
+    const content = document.getElementById(id);
+    const icon = document.getElementById('icon_' + id);
+
+    if (content.style.display === 'none' || content.classList.contains('json-collapsed')) {
+        content.style.display = 'block';
+        content.classList.remove('json-collapsed');
+        icon.textContent = '▼';
+        icon.classList.remove('collapsed');
+    } else {
+        content.style.display = 'none';
+        content.classList.add('json-collapsed');
+        icon.textContent = '▶';
+        icon.classList.add('collapsed');
+    }
+}
+
+function expandAll() {
+    const contents = document.querySelectorAll('.json-content');
+    const icons = document.querySelectorAll('.collapse-icon');
+
+    contents.forEach(content => {
+        content.style.display = 'block';
+        content.classList.remove('json-collapsed');
+    });
+
+    icons.forEach(icon => {
+        icon.textContent = '▼';
+        icon.classList.remove('collapsed');
+    });
+}
+
+function collapseAll() {
+    const contents = document.querySelectorAll('.json-content');
+    const icons = document.querySelectorAll('.collapse-icon');
+
+    contents.forEach(content => {
+        content.style.display = 'none';
+        content.classList.add('json-collapsed');
+    });
+
+    icons.forEach(icon => {
+        icon.textContent = '▶';
+        icon.classList.add('collapsed');
+    });
+}
+
+function copyFormatted() {
+    if (!formattedJsonData) {
+        showError('まず JSONを整形してください');
+        return;
+    }
+
+    try {
+        navigator.clipboard.writeText(formattedJsonData).then(() => {
+            const btn = document.querySelector('.copy-btn');
+            const originalText = btn.textContent;
+            btn.textContent = 'コピーしました!';
+            btn.style.background = '#28a745';
+
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '#17a2b8';
+            }, 2000);
+        }).catch(() => {
+            // フォールバック: 古いブラウザ対応
+            const textarea = document.createElement('textarea');
+            textarea.value = formattedJsonData;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            const btn = document.querySelector('.copy-btn');
+            const originalText = btn.textContent;
+            btn.textContent = 'コピーしました!';
+            btn.style.background = '#28a745';
+
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '#17a2b8';
+            }, 2000);
+        });
+    } catch (error) {
+        showError('コピーに失敗しました');
+    }
+}
+
+function clearAll() {
+    document.getElementById('json-input').value = '';
+    document.getElementById('output-section').style.display = 'none';
+    formattedJsonData = '';
+    hideError();
+    document.getElementById('json-input').focus();
+}
+
+// ページ読み込み時にフォーカス
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('json-input').focus();
+});
+</script>
