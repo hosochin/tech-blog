@@ -1,7 +1,7 @@
 title: hosochinの技術ブログ
 description: ""
 url: https://hosochin.github.io
-baseurl: /tech-blog
+baseurl: ""
 permalink: /:title/
 
 markdown: kramdown
