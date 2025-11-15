@@ -826,7 +826,7 @@
 
         window.addEventListener('DOMContentLoaded', function () {
             // search.json を fetch で読み込み
-            fetch('/tech-blog/search.json')
+            fetch('{{ "/search.json" | relative_url }}')
                 .then(response => response.json())
                 .then(data => {
                     searchData = data;
