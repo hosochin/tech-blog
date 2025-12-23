@@ -1,4 +1,5 @@
 # hosochin.com 技術ブログ
+https://www.hosochin.com/
 
 GitHub Pages + Jekyll で構築した技術ブログです。
 
