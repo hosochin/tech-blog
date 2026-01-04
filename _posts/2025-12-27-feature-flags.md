@@ -122,7 +122,7 @@ public class SampleService {
 
 ## 環境変数での上書き
 
-本番環境では環境変数で機能フラグを制御できます：
+本番環境では環境変数で機能フラグを制御できます
 
 ```bash
 # 環境変数で機能を有効
@@ -136,7 +136,7 @@ java -jar app.jar --feature.new-ui-enabled=true
 
 Spring Bootで機能フラグを実装する方法を紹介しました。
 
-**ポイント**:
+**ポイント**
 - `@ConfigurationProperties`を使ってシンプルに実装
 - 環境変数で簡単にON/OFF切り替え可能
 - `@PostConstruct`を使うことでstaticメソッドからも参照可能

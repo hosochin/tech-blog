@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Jekyll環境構築ガイド"
-date: 2025-08-31
+date: 2021-08-31
 tags: [github, Jekyll, Ruby]
 ---
 
